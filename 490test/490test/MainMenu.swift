@@ -10,9 +10,13 @@ import Foundation
 import UIKit
 
 class MainMenu: UIViewController {
+    
     @IBAction func settingsButton(_ sender: Any) {
         performSegue(withIdentifier: "goToSettings", sender: self)
         
+    }
+    @IBAction func startWorkoutButton(_ sender: Any) {
+        performSegue(withIdentifier:"goToWorkoutGoals" , sender: <#T##Any?#>)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
