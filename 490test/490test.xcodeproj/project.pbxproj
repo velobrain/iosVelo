@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		768AFF191FB3D94C007327DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 768AFF181FB3D94B007327DE /* GoogleService-Info.plist */; };
+		CC25FD323A19E5273551E4AC /* Pods_490test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454851B115E1234C7F81EF66 /* Pods_490test.framework */; };
 		D9B23B5D1FA67E8700BF1005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B23B5C1FA67E8700BF1005 /* AppDelegate.swift */; };
 		D9B23B5F1FA67E8700BF1005 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B23B5E1FA67E8700BF1005 /* ViewController.swift */; };
 		D9B23B621FA67E8700BF1005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9B23B601FA67E8700BF1005 /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454851B115E1234C7F81EF66 /* Pods_490test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_490test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.release.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.release.xcconfig"; sourceTree = "<group>"; };
+		768AFF181FB3D94B007327DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D07AE287377DFCC019C9575A /* Pods-490test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B23B591FA67E8700BF1005 /* 490test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 490test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B23B5C1FA67E8700BF1005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9B23B5E1FA67E8700BF1005 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC25FD323A19E5273551E4AC /* Pods_490test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FBBA7E648675D9BB63216D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				454851B115E1234C7F81EF66 /* Pods_490test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9B23B501FA67E8700BF1005 = {
 			isa = PBXGroup;
 			children = (
 				D9B23B5B1FA67E8700BF1005 /* 490test */,
 				D9B23B5A1FA67E8700BF1005 /* Products */,
+				DB7396F2B3054FE6FD5F90CC /* Pods */,
+				4FBBA7E648675D9BB63216D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,9 +85,19 @@
 				D9B23B661FA67E8700BF1005 /* Assets.xcassets */,
 				D9B23B681FA67E8700BF1005 /* LaunchScreen.storyboard */,
 				D9B23B6B1FA67E8700BF1005 /* Info.plist */,
+				768AFF181FB3D94B007327DE /* GoogleService-Info.plist */,
 				D9B23B631FA67E8700BF1005 /* _90test.xcdatamodeld */,
 			);
 			path = 490test;
+			sourceTree = "<group>";
+		};
+		DB7396F2B3054FE6FD5F90CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D07AE287377DFCC019C9575A /* Pods-490test.debug.xcconfig */,
+				62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9B23B6E1FA67E8700BF1005 /* Build configuration list for PBXNativeTarget "490test" */;
 			buildPhases = (
+				BCA1868AC9467F590E4BCD75 /* [CP] Check Pods Manifest.lock */,
 				D9B23B551FA67E8700BF1005 /* Sources */,
 				D9B23B561FA67E8700BF1005 /* Frameworks */,
 				D9B23B571FA67E8700BF1005 /* Resources */,
+				98CD395B27507C3418D262FE /* [CP] Embed Pods Frameworks */,
+				7458E6FE1AFE888F6B277846 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,12 +163,73 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B23B6A1FA67E8700BF1005 /* LaunchScreen.storyboard in Resources */,
+				768AFF191FB3D94C007327DE /* GoogleService-Info.plist in Resources */,
 				D9B23B671FA67E8700BF1005 /* Assets.xcassets in Resources */,
 				D9B23B621FA67E8700BF1005 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7458E6FE1AFE888F6B277846 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-490test/Pods-490test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98CD395B27507C3418D262FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-490test/Pods-490test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-490test/Pods-490test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCA1868AC9467F590E4BCD75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-490test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D9B23B551FA67E8700BF1005 /* Sources */ = {
@@ -284,6 +375,7 @@
 		};
 		D9B23B6F1FA67E8700BF1005 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D07AE287377DFCC019C9575A /* Pods-490test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +390,7 @@
 		};
 		D9B23B701FA67E8700BF1005 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
