@@ -16,7 +16,7 @@ class MainMenu: UIViewController {
         
     }
     @IBAction func startWorkoutButton(_ sender: Any) {
-        performSegue(withIdentifier:"goToWorkoutGoals" , sender: <#T##Any?#>)
+        performSegue(withIdentifier:"goToWorkoutGoals" , sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

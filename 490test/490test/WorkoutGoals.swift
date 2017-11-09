@@ -47,6 +47,13 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         placeHolder4.text = weightIn.text
     }
     
+    //removes the keyboard by tapping anywhere on screen
+    func removeKB() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "goalsNext"){
             let  myVC = segue.destination as! timerGoals
@@ -62,6 +69,8 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         heartIn.delegate = self
         timeIn.delegate = self
         weightIn.delegate = self
+        
+        removeKB()
 
         // Do any additional setup after loading the view.
     }
