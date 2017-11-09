@@ -16,19 +16,12 @@ class ViewController: UIViewController {
         btn1.setTitle("Connected", for: .normal)
     }
     
-    
-    
-    @IBAction func moveToNext(_ sender: Any) {
-        print("Lets get you skinny")
-        
-        if (btn1.titleLabel!.text == "Connected"){
-            print("Lets get moving")
-            performSegue(withIdentifier: "nextStep", sender: self)
-        }
-        else{
-            print("Make sure everything is connected")
-        }
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
+    
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
