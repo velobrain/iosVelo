@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		767066231FB3E30700283426 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767066221FB3E30700283426 /* MainMenu.swift */; };
+		767066251FB3E5D500283426 /* icons8-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 767066241FB3E5D500283426 /* icons8-wrench.png */; };
+		767066271FB3E78C00283426 /* icons8-customer.png in Resources */ = {isa = PBXBuildFile; fileRef = 767066261FB3E78C00283426 /* icons8-customer.png */; };
+		767066291FB3EDB000283426 /* icons8-cyclist.png in Resources */ = {isa = PBXBuildFile; fileRef = 767066281FB3EDAF00283426 /* icons8-cyclist.png */; };
+		7670662B1FB3EECB00283426 /* icons8-about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7670662A1FB3EECB00283426 /* icons8-about.png */; };
 		768AFF191FB3D94C007327DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 768AFF181FB3D94B007327DE /* GoogleService-Info.plist */; };
 		CC25FD323A19E5273551E4AC /* Pods_490test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454851B115E1234C7F81EF66 /* Pods_490test.framework */; };
 		D9B23B5D1FA67E8700BF1005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B23B5C1FA67E8700BF1005 /* AppDelegate.swift */; };
@@ -22,6 +27,11 @@
 /* Begin PBXFileReference section */
 		454851B115E1234C7F81EF66 /* Pods_490test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_490test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.release.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.release.xcconfig"; sourceTree = "<group>"; };
+		767066221FB3E30700283426 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		767066241FB3E5D500283426 /* icons8-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-wrench.png"; sourceTree = "<group>"; };
+		767066261FB3E78C00283426 /* icons8-customer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-customer.png"; sourceTree = "<group>"; };
+		767066281FB3EDAF00283426 /* icons8-cyclist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-cyclist.png"; sourceTree = "<group>"; };
+		7670662A1FB3EECB00283426 /* icons8-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-about.png"; sourceTree = "<group>"; };
 		768AFF181FB3D94B007327DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D07AE287377DFCC019C9575A /* Pods-490test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.debug.xcconfig"; sourceTree = "<group>"; };
 		D9B23B591FA67E8700BF1005 /* 490test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 490test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,9 +90,14 @@
 				D9B23B5C1FA67E8700BF1005 /* AppDelegate.swift */,
 				D9B23B731FA6896100BF1005 /* WorkoutGoals.swift */,
 				D9B23B5E1FA67E8700BF1005 /* ViewController.swift */,
+				767066221FB3E30700283426 /* MainMenu.swift */,
 				D9B23B751FA6A8AA00BF1005 /* timerGoals.swift */,
 				D9B23B601FA67E8700BF1005 /* Main.storyboard */,
 				D9B23B661FA67E8700BF1005 /* Assets.xcassets */,
+				767066241FB3E5D500283426 /* icons8-wrench.png */,
+				767066261FB3E78C00283426 /* icons8-customer.png */,
+				767066281FB3EDAF00283426 /* icons8-cyclist.png */,
+				7670662A1FB3EECB00283426 /* icons8-about.png */,
 				D9B23B681FA67E8700BF1005 /* LaunchScreen.storyboard */,
 				D9B23B6B1FA67E8700BF1005 /* Info.plist */,
 				768AFF181FB3D94B007327DE /* GoogleService-Info.plist */,
@@ -163,9 +178,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B23B6A1FA67E8700BF1005 /* LaunchScreen.storyboard in Resources */,
+				767066271FB3E78C00283426 /* icons8-customer.png in Resources */,
 				768AFF191FB3D94C007327DE /* GoogleService-Info.plist in Resources */,
 				D9B23B671FA67E8700BF1005 /* Assets.xcassets in Resources */,
 				D9B23B621FA67E8700BF1005 /* Main.storyboard in Resources */,
+				767066291FB3EDB000283426 /* icons8-cyclist.png in Resources */,
+				767066251FB3E5D500283426 /* icons8-wrench.png in Resources */,
+				7670662B1FB3EECB00283426 /* icons8-about.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B23B5F1FA67E8700BF1005 /* ViewController.swift in Sources */,
+				767066231FB3E30700283426 /* MainMenu.swift in Sources */,
 				D9B23B651FA67E8700BF1005 /* _90test.xcdatamodeld in Sources */,
 				D9B23B761FA6A8AA00BF1005 /* timerGoals.swift in Sources */,
 				D9B23B741FA6896100BF1005 /* WorkoutGoals.swift in Sources */,
