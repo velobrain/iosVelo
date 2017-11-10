@@ -40,6 +40,7 @@ class signuplogincontroller: UIViewController {
     
     
     
+    
     func register() {
         guard let emailReg = emailRegField.text else {
             // Change this to an alert view later
@@ -53,6 +54,32 @@ class signuplogincontroller: UIViewController {
             return
         }
         
+        guard let name = nameRegField.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let age = ageRegField.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let weight = weightRegField.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let height = hieghtRegField.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        
+        
         Auth.auth().createUser(withEmail: emailReg, password: passwordReg, completion: { (user,error) in
             print(emailReg)
             if error != nil {
@@ -60,6 +87,24 @@ class signuplogincontroller: UIViewController {
                 return
             }
             // made new authenticated user
+            guard let uid = user?.uid else {
+                return
+            }
+            let ref = Database.database().reference(fromURL: "https://velobrain-f3c9d.firebaseio.com/")
+            let usersReference = ref.child("users").child(uid)
+            let values = ["name": name, "email" : emailReg, "age" : age, "weight" : weight, "height" : height]
+            
+            usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                if err != nil {
+                    print(err!)
+                    return
+                }
+                print("saved successfully to DB")
+                
+            })
+            
+            
+            
         })
 
         
