@@ -8,13 +8,46 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class signuplogincontroller: UIViewController {
+    //MARK - Login Fields
+    @IBOutlet weak var emailLoginField: UITextField!
+    @IBOutlet weak var pwloginfield: UITextField!
+    // MARK
+    
+    //MARK - Register Fields
+    @IBOutlet weak var emailRegField: UITextField!
+    @IBOutlet weak var pwRegField: UITextField!
+    @IBOutlet weak var nameRegField: UITextField!
+    @IBOutlet weak var ageRegField: UITextField!
+    @IBOutlet weak var weightRegField: UITextField!
+    @IBOutlet weak var hieghtRegField: UITextField!
+    //MARK
+    
+    
+    @IBAction func loginButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func registerButton(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        removeKB()
     }
     
+    func removeKB() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     
 }
