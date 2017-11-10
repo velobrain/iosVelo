@@ -26,6 +26,9 @@ class signuplogincontroller: UIViewController {
     @IBOutlet weak var hieghtRegField: UITextField!
     //MARK
     
+    @IBAction func backButton(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func loginButton(_ sender: Any) {
     }
