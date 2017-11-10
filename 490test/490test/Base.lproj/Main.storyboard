@@ -214,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ld-wJ-gma">
-                                <rect key="frame" x="0.0" y="200" width="375" height="178"/>
+                                <rect key="frame" x="0.0" y="230" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Profile" image="icons8-customer.png">
@@ -225,12 +225,12 @@
                                 <rect key="frame" x="0.0" y="557" width="375" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="About VeloBrain" image="icons8-about.png">
+                                <state key="normal" title="Login/Signup" image="icons8-about.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m5-Ni-Zte">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Start Workout" image="icons8-cyclist.png">
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVs-4S-3h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1108" y="1050"/>
+            <point key="canvasLocation" x="-1108" y="1049.3253373313344"/>
         </scene>
         <!--Timer Goals-->
         <scene sceneID="TiP-ss-j7N">
@@ -344,6 +344,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IU-Rk-29d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8" y="125.4872563718141"/>
+        </scene>
+        <!--signuplogincontroller-->
+        <scene sceneID="ErV-KW-4iQ">
+            <objects>
+                <viewController title="signuplogincontroller" id="Nck-Vb-2er" customClass="signuplogincontroller" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q5O-Nc-Hec">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="g7k-oN-cLO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1H5-7H-aEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="1101"/>
         </scene>
     </scenes>
     <resources>

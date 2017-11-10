@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		764D85BF1FB5078C0007754E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D85BE1FB5078C0007754E /* ProfileController.swift */; };
+		764D85C11FB528E60007754E /* signuplogincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D85C01FB528E60007754E /* signuplogincontroller.swift */; };
 		767066231FB3E30700283426 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767066221FB3E30700283426 /* MainMenu.swift */; };
 		767066251FB3E5D500283426 /* icons8-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 767066241FB3E5D500283426 /* icons8-wrench.png */; };
 		767066271FB3E78C00283426 /* icons8-customer.png in Resources */ = {isa = PBXBuildFile; fileRef = 767066261FB3E78C00283426 /* icons8-customer.png */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		454851B115E1234C7F81EF66 /* Pods_490test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_490test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.release.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.release.xcconfig"; sourceTree = "<group>"; };
+		764D85BE1FB5078C0007754E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		764D85C01FB528E60007754E /* signuplogincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signuplogincontroller.swift; sourceTree = "<group>"; };
 		767066221FB3E30700283426 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		767066241FB3E5D500283426 /* icons8-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-wrench.png"; sourceTree = "<group>"; };
 		767066261FB3E78C00283426 /* icons8-customer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-customer.png"; sourceTree = "<group>"; };
@@ -90,8 +94,10 @@
 				D9B23B5C1FA67E8700BF1005 /* AppDelegate.swift */,
 				D9B23B731FA6896100BF1005 /* WorkoutGoals.swift */,
 				D9B23B5E1FA67E8700BF1005 /* ViewController.swift */,
+				764D85BE1FB5078C0007754E /* ProfileController.swift */,
 				767066221FB3E30700283426 /* MainMenu.swift */,
 				D9B23B751FA6A8AA00BF1005 /* timerGoals.swift */,
+				764D85C01FB528E60007754E /* signuplogincontroller.swift */,
 				D9B23B601FA67E8700BF1005 /* Main.storyboard */,
 				D9B23B661FA67E8700BF1005 /* Assets.xcassets */,
 				767066241FB3E5D500283426 /* icons8-wrench.png */,
@@ -255,8 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764D85BF1FB5078C0007754E /* ProfileController.swift in Sources */,
 				D9B23B5F1FA67E8700BF1005 /* ViewController.swift in Sources */,
 				767066231FB3E30700283426 /* MainMenu.swift in Sources */,
+				764D85C11FB528E60007754E /* signuplogincontroller.swift in Sources */,
 				D9B23B651FA67E8700BF1005 /* _90test.xcdatamodeld in Sources */,
 				D9B23B761FA6A8AA00BF1005 /* timerGoals.swift in Sources */,
 				D9B23B741FA6896100BF1005 /* WorkoutGoals.swift in Sources */,
@@ -399,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8Q372BK2Z;
 				INFOPLIST_FILE = 490test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TBD.-90test";
@@ -414,6 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8Q372BK2Z;
 				INFOPLIST_FILE = 490test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TBD.-90test";
