@@ -8,9 +8,14 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class ProfileController: UIViewController {
-   
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

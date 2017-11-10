@@ -379,20 +379,6 @@
                                     <action selector="loginButton:" destination="Nck-Vb-2er" eventType="touchUpInside" id="agm-66-vTg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atR-e0-RC5">
-                                <rect key="frame" x="107" y="307" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yaa-dH-wu8">
-                                <rect key="frame" x="107" y="337" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-9j-Yfw">
                                 <rect key="frame" x="107" y="366" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -429,6 +415,20 @@
                                     <action selector="registerButton:" destination="Nck-Vb-2er" eventType="touchUpInside" id="mSq-Bq-ceb"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WH4-Ft-PDh">
+                                <rect key="frame" x="107" y="324" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyz-9U-ATR">
+                                <rect key="frame" x="107" y="286" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="g7k-oN-cLO"/>
@@ -436,10 +436,10 @@
                     <connections>
                         <outlet property="ageRegField" destination="Kf0-K4-2zY" id="Tz2-X2-17r"/>
                         <outlet property="emailLoginField" destination="4XW-2g-KI8" id="mgh-Jc-B7X"/>
-                        <outlet property="emailRegField" destination="Yaa-dH-wu8" id="L2r-Ny-GWp"/>
+                        <outlet property="emailRegField" destination="cyz-9U-ATR" id="J6J-4p-m8I"/>
                         <outlet property="hieghtRegField" destination="bx5-Mt-eLL" id="0YW-BG-Ic0"/>
                         <outlet property="nameRegField" destination="aI8-9j-Yfw" id="1TX-us-trr"/>
-                        <outlet property="pwRegField" destination="Yaa-dH-wu8" id="aTL-qF-jGL"/>
+                        <outlet property="pwRegField" destination="WH4-Ft-PDh" id="D2x-db-Ibr"/>
                         <outlet property="pwloginfield" destination="Mxm-yP-vXV" id="3SN-qA-RS8"/>
                         <outlet property="weightRegField" destination="RS2-Wj-mS5" id="MUZ-9W-COg"/>
                     </connections>

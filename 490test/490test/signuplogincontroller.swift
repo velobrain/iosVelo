@@ -17,8 +17,9 @@ class signuplogincontroller: UIViewController {
     // MARK
     
     //MARK - Register Fields
-    @IBOutlet weak var emailRegField: UITextField!
+   
     @IBOutlet weak var pwRegField: UITextField!
+    @IBOutlet weak var emailRegField: UITextField!
     @IBOutlet weak var nameRegField: UITextField!
     @IBOutlet weak var ageRegField: UITextField!
     @IBOutlet weak var weightRegField: UITextField!
@@ -31,6 +32,35 @@ class signuplogincontroller: UIViewController {
     
     
     @IBAction func registerButton(_ sender: Any) {
+        register()
+    }
+    
+    
+    
+    func register() {
+        guard let emailReg = emailRegField.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let passwordReg = pwRegField.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: emailReg, password: passwordReg, completion: { (user,error) in
+            print(emailReg)
+            if error != nil {
+                print(error!)
+                return
+            }
+            // made new authenticated user
+        })
+
+        
+        
     }
     
     override func viewDidLoad() {
