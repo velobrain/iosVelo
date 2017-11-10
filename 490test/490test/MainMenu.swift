@@ -22,6 +22,9 @@ class MainMenu: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func gotoLoginOrSignupButton(_ sender: Any) {
+        performSegue(withIdentifier: "gotosignuplogin", sender: self)
+    }
     
     
     override func didReceiveMemoryWarning() {

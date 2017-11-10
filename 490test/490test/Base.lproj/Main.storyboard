@@ -228,6 +228,9 @@
                                 <state key="normal" title="Login/Signup" image="icons8-about.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="gotoLoginOrSignupButton:" destination="q9M-dN-nPU" eventType="touchUpInside" id="8fy-Av-HUV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m5-Ni-Zte">
                                 <rect key="frame" x="0.0" y="30" width="375" height="192"/>
@@ -247,6 +250,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSettings" id="0xc-H3-YnC"/>
                         <segue destination="EGs-R2-WNL" kind="show" identifier="goToWorkoutGoals" id="D3C-V3-9VP"/>
+                        <segue destination="Nck-Vb-2er" kind="show" identifier="gotosignuplogin" id="GEF-6V-kg7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVs-4S-3h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
