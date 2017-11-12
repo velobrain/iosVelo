@@ -31,6 +31,7 @@ class signuplogincontroller: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
+        login()
     }
     
     
@@ -38,7 +39,30 @@ class signuplogincontroller: UIViewController {
         register()
     }
     
-    
+    func login (){
+        guard let emailLogin = emailLoginField.text else {
+            print ("invaild input")
+            return
+        }
+        
+        guard let pwLogin = pwloginfield.text else {
+            print ("Invaild Input")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: emailLogin, password: pwLogin){(user,error) in
+            print (emailLogin)
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: "Invalid Password or Username.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title:"OK",style: UIAlertActionStyle.default, handler:nil))
+                self.present(alert, animated: true, completion: nil)
+                print(error!)
+                return
+            }
+            
+            print ("I logged in somehow")
+        }
+    }
     
     
     func register() {
