@@ -233,6 +233,7 @@
                                 </state>
                                 <connections>
                                     <action selector="gotoLoginOrSignupButton:" destination="q9M-dN-nPU" eventType="touchUpInside" id="8fy-Av-HUV"/>
+                                    <segue destination="uNU-KR-Vbk" kind="show" identifier="goToNewLoginPage" id="Vpe-3b-7fG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m5-Ni-Zte">

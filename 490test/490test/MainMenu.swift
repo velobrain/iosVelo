@@ -23,7 +23,7 @@ class MainMenu: UIViewController {
     }
     
     @IBAction func gotoLoginOrSignupButton(_ sender: Any) {
-        performSegue(withIdentifier: "gotosignuplogin", sender: self)
+        performSegue(withIdentifier: "goToNewLoginPage", sender: self)
     }
     
     
