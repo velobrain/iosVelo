@@ -31,7 +31,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func openModal(_ sender: Any) {
-        
+        pushWorkout()
         print("Button has been pressed")
     }
     
@@ -62,6 +62,54 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
             myVC.heartP = heartIn.text!
             myVC.speedP = speedIn.text!
         }
+    }
+    
+    func pushWorkout() {
+        guard let speed = speedIn.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let heartRate = heartIn.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let time = timeIn.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        
+    
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print ("something went wrong")
+            return
+        }
+    
+        
+        let ref = Database.database().reference(fromURL: "https://velobrain-f3c9d.firebaseio.com/")
+        let userRef = ref.child("users").child(userID)
+        let workoutref = userRef.childByAutoId()
+        
+        let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time]
+        
+        workoutref.updateChildValues(workoutValues, withCompletionBlock: { (err, ref) in
+            if err != nil {
+                print(err!)
+                return
+            }
+            print("added workout to db")
+        })
+        
+        
+        
+        
+        
+        
     }
     
     override func viewDidLoad() {

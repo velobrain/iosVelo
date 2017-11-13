@@ -97,8 +97,6 @@ class signupVC: UIViewController {
             
             self.performSegue(withIdentifier: "signUpSucess", sender: nil)
             
-            
-            
         })
         
         
