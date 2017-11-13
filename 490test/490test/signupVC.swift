@@ -105,6 +105,10 @@ class signupVC: UIViewController {
         
     }
     
+    func hidePWField(){
+        pwRegField.isSecureTextEntry = true
+    }
+    
     func cornersColours(){
         pwRegField.layer.cornerRadius = 20.0
         pwRegField.clipsToBounds = true
@@ -126,6 +130,7 @@ class signupVC: UIViewController {
     
     
     override func viewDidLoad() {
+        self.hidePWField()
         cornersColours()
         super.viewDidLoad()
         self.removeKB()

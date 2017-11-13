@@ -31,6 +31,7 @@ class loginVC: UIViewController {
     
     override func viewDidLoad() {
          self.removeKB()
+        self.hidePWFields()
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: "loginSuccess", sender: nil)
@@ -92,8 +93,10 @@ class loginVC: UIViewController {
         loginBtnShape.clipsToBounds = true
         signBtnSHape.layer.cornerRadius = 20.0
         signBtnSHape.clipsToBounds = true
-
-        
+    }
+    
+    func hidePWFields(){
+        pwLbl.isSecureTextEntry = true
     }
     
 
