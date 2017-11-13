@@ -128,6 +128,7 @@ class signupVC: UIViewController {
     override func viewDidLoad() {
         cornersColours()
         super.viewDidLoad()
+        self.removeKB()
 
         // Do any additional setup after loading the view.
     }
@@ -136,7 +137,11 @@ class signupVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func removeKB() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
 
     /*
     // MARK: - Navigation

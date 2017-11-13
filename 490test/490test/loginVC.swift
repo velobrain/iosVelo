@@ -30,11 +30,13 @@ class loginVC: UIViewController {
     
     
     override func viewDidLoad() {
+        
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: "loginSuccess", sender: nil)
             } else {
                 self.cornersColours()
+                self.removeKB()
                 super.viewDidLoad()
             }
         }
@@ -42,7 +44,12 @@ class loginVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    func removeKB() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
