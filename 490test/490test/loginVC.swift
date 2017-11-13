@@ -30,13 +30,13 @@ class loginVC: UIViewController {
     
     
     override func viewDidLoad() {
-        
+         self.removeKB()
         Auth.auth().addStateDidChangeListener { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: "loginSuccess", sender: nil)
             } else {
                 self.cornersColours()
-                self.removeKB()
+               
                 super.viewDidLoad()
             }
         }
