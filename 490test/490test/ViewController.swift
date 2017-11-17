@@ -12,6 +12,11 @@ import UIKit
 
 class ViewController: UIViewController{
     
+    @IBOutlet weak var showListButton: UIButton!
+    
+    @IBAction func showListAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToBTList", sender: self)
+    }
     
     
     @IBAction func backBtn(_ sender: Any) {

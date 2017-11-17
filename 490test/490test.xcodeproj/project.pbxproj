@@ -17,6 +17,8 @@
 		767066291FB3EDB000283426 /* icons8-cyclist.png in Resources */ = {isa = PBXBuildFile; fileRef = 767066281FB3EDAF00283426 /* icons8-cyclist.png */; };
 		7670662B1FB3EECB00283426 /* icons8-about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7670662A1FB3EECB00283426 /* icons8-about.png */; };
 		768AFF191FB3D94C007327DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 768AFF181FB3D94B007327DE /* GoogleService-Info.plist */; };
+		76A0ABA81FBF6027007C9343 /* BTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0ABA71FBF6027007C9343 /* BTManager.swift */; };
+		76A0ABAA1FBF6657007C9343 /* PeripheralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */; };
 		CC25FD323A19E5273551E4AC /* Pods_490test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454851B115E1234C7F81EF66 /* Pods_490test.framework */; };
 		D92146711FB8F361007F0896 /* bike.png in Resources */ = {isa = PBXBuildFile; fileRef = D92146701FB8F360007F0896 /* bike.png */; };
 		D9A443E41FB9119000B6A62F /* icons8-go-back.png in Resources */ = {isa = PBXBuildFile; fileRef = D9A443E31FB9119000B6A62F /* icons8-go-back.png */; };
@@ -44,6 +46,8 @@
 		767066281FB3EDAF00283426 /* icons8-cyclist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-cyclist.png"; sourceTree = "<group>"; };
 		7670662A1FB3EECB00283426 /* icons8-about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-about.png"; sourceTree = "<group>"; };
 		768AFF181FB3D94B007327DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76A0ABA71FBF6027007C9343 /* BTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTManager.swift; sourceTree = "<group>"; };
+		76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTableViewCell.swift; sourceTree = "<group>"; };
 		D07AE287377DFCC019C9575A /* Pods-490test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.debug.xcconfig"; sourceTree = "<group>"; };
 		D92146701FB8F360007F0896 /* bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bike.png; sourceTree = "<group>"; };
 		D9A443E31FB9119000B6A62F /* icons8-go-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-go-back.png"; sourceTree = "<group>"; };
@@ -106,9 +110,11 @@
 				D9B23B5E1FA67E8700BF1005 /* ViewController.swift */,
 				765E7D8E1FBE8C4B00B3FA02 /* UUIDKey.swift */,
 				764D85BE1FB5078C0007754E /* ProfileController.swift */,
+				76A0ABA71FBF6027007C9343 /* BTManager.swift */,
 				767066221FB3E30700283426 /* MainMenu.swift */,
 				D9B23B751FA6A8AA00BF1005 /* timerGoals.swift */,
 				765E7D8A1FBE69F700B3FA02 /* Main.storyboard */,
+				76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */,
 				764D85C01FB528E60007754E /* signuplogincontroller.swift */,
 				D9A443E51FB915AB00B6A62F /* signupVC.swift */,
 				D9C310151FB90887004638FE /* loginVC.swift */,
@@ -281,6 +287,7 @@
 				764D85BF1FB5078C0007754E /* ProfileController.swift in Sources */,
 				D9B23B5F1FA67E8700BF1005 /* ViewController.swift in Sources */,
 				767066231FB3E30700283426 /* MainMenu.swift in Sources */,
+				76A0ABAA1FBF6657007C9343 /* PeripheralTableViewCell.swift in Sources */,
 				764D85C11FB528E60007754E /* signuplogincontroller.swift in Sources */,
 				D9B23B651FA67E8700BF1005 /* _90test.xcdatamodeld in Sources */,
 				D9B23B761FA6A8AA00BF1005 /* timerGoals.swift in Sources */,
@@ -289,6 +296,7 @@
 				D9C310161FB90887004638FE /* loginVC.swift in Sources */,
 				D9B23B5D1FA67E8700BF1005 /* AppDelegate.swift in Sources */,
 				765E7D8F1FBE8C4B00B3FA02 /* UUIDKey.swift in Sources */,
+				76A0ABA81FBF6027007C9343 /* BTManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
