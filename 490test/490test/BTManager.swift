@@ -26,6 +26,9 @@ class BTmanager: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegat
     var timer = Timer()
     var characteristics = [String : CBCharacteristic]()
     
+    @IBAction func backAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var baseTableView: UITableView!
     
     @IBOutlet weak var refreshButton: UIButton!
@@ -232,17 +235,20 @@ class BTmanager: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegat
     
     /*After you've found a characteristic of a service that you are interested in, you can read the characteristic's value by calling the peripheral "readValueForCharacteristic" method within the "didDiscoverCharacteristicsFor service" delegate.
      */
+    
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        
         if characteristic == rxCharacteristic {
             if let ASCIIstring = NSString(data: characteristic.value!, encoding: String.Encoding.utf8.rawValue) {
                 characteristicASCIIValue = ASCIIstring
                 print("Value Recieved: \((characteristicASCIIValue as String))")
                 NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: nil)
-                
             }
         }
     }
+ 
+    
+   
+ 
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: Error?) {
         print("*******************************************************")
