@@ -83,17 +83,21 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
-    
         guard let userID = Auth.auth().currentUser?.uid else {
             print ("something went wrong")
             return
         }
     
-        
         let ref = Database.database().reference(fromURL: "https://velobrain-f3c9d.firebaseio.com/")
-        let userRef = ref.child("users").child(userID)
-        let workoutref = userRef.childByAutoId()
+        //let userRef = ref.child("users").child(userID)
+        //let workoutref = userRef.childByAutoId()
+    
+        
+        let today : String!
+        
+        today = getTodayString()
+        
+        let workoutref = ref.child("workouts").child(userID).child(today);
         
         let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time]
         
@@ -105,12 +109,28 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
             print("added workout to db")
         })
         
+    }
+    
+    func getTodayString() -> String{
         
+        let date = Date()
+        let calender = Calendar.current
+        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
         
+        let year = components.year
+        let month = components.month
+        let day = components.day
+        let hour = components.hour
+        let minute = components.minute
+        let second = components.second
         
+        let today_string = String(year!) + "-" + String(month!) + "-" + String(day!) + " " + String(hour!)  + ":" + String(minute!) + ":" +  String(second!)
         
+        return today_string
         
     }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
