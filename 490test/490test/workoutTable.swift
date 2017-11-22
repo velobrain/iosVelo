@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
+var recordedAtList = [String]()
+var heartRateList = [String]()
+var speedList = [String]()
+var timeList = [String]()
 class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func backBtn(_ sender: Any) {
@@ -22,16 +26,16 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     
-    var list = [String]()
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(list.count)
+        return(recordedAtList.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "workoutCell")
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = recordedAtList[indexPath.row]
         return cell
         
     }
@@ -45,8 +49,14 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
         
             let value = snapshot.value as? NSDictionary
             let valueToAppend = value?["recordedAt"] as? String ?? ""
-            self.list.append(valueToAppend)
-            print(self.list)
+            let heartRateToAppend = value?["heartRate"] as? String ?? ""
+            let speedToAppend = value?["speed"] as? String ?? ""
+            let timeToAppend = value?["time"] as? String ?? ""
+            recordedAtList.append(valueToAppend)
+            heartRateList.append(heartRateToAppend)
+            speedList.append(speedToAppend)
+            timeList.append(timeToAppend)
+            
         }
       
     }
