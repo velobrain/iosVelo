@@ -14,12 +14,14 @@ var recordedAtList = [String]()
 var heartRateList = [String]()
 var speedList = [String]()
 var timeList = [String]()
+var position = 0
 class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference!
     let user = Auth.auth().currentUser
     
@@ -40,13 +42,18 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToWorkoutDetail", sender: self)
+        position = indexPath.row
+    }
+    
     
     // function fills in list of workouts with the timestamps in firebase
     func loadInList() {
         let uid = user?.uid
         ref = Database.database().reference()
         ref.child("workouts").child(uid!).observe(.childAdded) { (snapshot) in
-        
+            print(snapshot)
             let value = snapshot.value as? NSDictionary
             let valueToAppend = value?["recordedAt"] as? String ?? ""
             let heartRateToAppend = value?["heartRate"] as? String ?? ""
@@ -64,7 +71,19 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInList()
+        if(loadCount == 0) {
+            loadInList()
+            loadCount += 1
+        } else {
+            print("already loaded")
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool ) {
+       
+        tableView.reloadData()
+        
     }
     
     

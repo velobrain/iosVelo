@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
-
+var loadCount = 0
 class ProfileController: UIViewController {
 
     @IBAction func workoutListBtn(_ sender: Any) {
