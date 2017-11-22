@@ -31,4 +31,11 @@ class WorkoutDetails: UIViewController {
         hrl.text = "Heartrate: \(heartRateList[position])"
         timeLabel.text = "Length of workout: \(timeList[position])"
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        recordedAtLable.text = " Recorded at: \(recordedAtList[position])"
+        speedL.text = "Speed: \(speedList[position])"
+        hrl.text = "Heartrate: \(heartRateList[position])"
+        timeLabel.text = "Length of workout: \(timeList[position])"
+    }
 }
