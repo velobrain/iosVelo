@@ -99,8 +99,8 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         today = getTodayString()
         
         let workoutref = ref.child("workouts").child(userID).child(today);
-        
-        let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time]
+         let recordedAt = today
+        let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time, "recordedAt" : recordedAt]
         
         workoutref.updateChildValues(workoutValues, withCompletionBlock: { (err, ref) in
             if err != nil {

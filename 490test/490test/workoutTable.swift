@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,7 +16,13 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
         dismiss(animated: true, completion: nil)
     }
     
-    let list = ["temp1" , "temp2" , "temp3"]
+    var ref: DatabaseReference!
+    let user = Auth.auth().currentUser
+    
+    
+    
+    
+    var list = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(list.count)
@@ -30,12 +37,24 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     
-    
-    
+    // function fills in list of workouts with the timestamps in firebase
+    func loadInList() {
+        let uid = user?.uid
+        ref = Database.database().reference()
+        ref.child("workouts").child(uid!).observe(.childAdded) { (snapshot) in
+        
+            let value = snapshot.value as? NSDictionary
+            let valueToAppend = value?["recordedAt"] as? String ?? ""
+            self.list.append(valueToAppend)
+            print(self.list)
+        }
+      
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadInList()
     }
     
     
