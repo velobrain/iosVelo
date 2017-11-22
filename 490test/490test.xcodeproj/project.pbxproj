@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7648AD321FC540820045DCA7 /* workoutTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7648AD311FC540820045DCA7 /* workoutTable.swift */; };
 		764D85BF1FB5078C0007754E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D85BE1FB5078C0007754E /* ProfileController.swift */; };
 		764D85C11FB528E60007754E /* signuplogincontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D85C01FB528E60007754E /* signuplogincontroller.swift */; };
 		765E7D8B1FBE69F700B3FA02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765E7D8A1FBE69F700B3FA02 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		454851B115E1234C7F81EF66 /* Pods_490test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_490test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.release.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.release.xcconfig"; sourceTree = "<group>"; };
+		7648AD311FC540820045DCA7 /* workoutTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutTable.swift; sourceTree = "<group>"; };
 		764D85BE1FB5078C0007754E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		764D85C01FB528E60007754E /* signuplogincontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signuplogincontroller.swift; sourceTree = "<group>"; };
 		765E7D8A1FBE69F700B3FA02 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				767066221FB3E30700283426 /* MainMenu.swift */,
 				D9B23B751FA6A8AA00BF1005 /* timerGoals.swift */,
 				765E7D8A1FBE69F700B3FA02 /* Main.storyboard */,
+				7648AD311FC540820045DCA7 /* workoutTable.swift */,
 				76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */,
 				764D85C01FB528E60007754E /* signuplogincontroller.swift */,
 				D9A443E51FB915AB00B6A62F /* signupVC.swift */,
@@ -292,6 +295,7 @@
 				76A0ABAA1FBF6657007C9343 /* PeripheralTableViewCell.swift in Sources */,
 				764D85C11FB528E60007754E /* signuplogincontroller.swift in Sources */,
 				D9B23B651FA67E8700BF1005 /* _90test.xcdatamodeld in Sources */,
+				7648AD321FC540820045DCA7 /* workoutTable.swift in Sources */,
 				D9B23B761FA6A8AA00BF1005 /* timerGoals.swift in Sources */,
 				D9A443E61FB915AB00B6A62F /* signupVC.swift in Sources */,
 				D9B23B741FA6896100BF1005 /* WorkoutGoals.swift in Sources */,

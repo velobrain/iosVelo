@@ -12,6 +12,9 @@ import Firebase
 
 class ProfileController: UIViewController {
 
+    @IBAction func workoutListBtn(_ sender: Any) {
+        performSegue(withIdentifier: "goToWorkoutList", sender: self)
+    }
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var userHeightLbl: UILabel!
     @IBOutlet weak var userWeightLbl: UILabel!

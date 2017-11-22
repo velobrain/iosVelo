@@ -470,6 +470,14 @@
                                     <action selector="backBtn:" destination="lav-VB-8fF" eventType="touchUpInside" id="kHU-qi-CjH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-r6-BNr">
+                                <rect key="frame" x="143" y="122" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="See workout list"/>
+                                <connections>
+                                    <action selector="workoutListBtn:" destination="lav-VB-8fF" eventType="touchUpInside" id="xLC-8Z-aEC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="F2k-5R-rtf"/>
@@ -479,11 +487,56 @@
                         <outlet property="userHeightLbl" destination="2pA-KD-EHt" id="r4i-2S-VlH"/>
                         <outlet property="userNameLbl" destination="053-8a-hMd" id="Zer-Sy-Wio"/>
                         <outlet property="userWeightLbl" destination="Aga-T5-CIh" id="J9i-1U-Uoe"/>
+                        <segue destination="nuX-2E-1P6" kind="show" identifier="goToWorkoutList" id="0JW-fr-mXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IY3-0r-laQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-391.19999999999999" y="1884.1079460269866"/>
+            <point key="canvasLocation" x="-391.19999999999999" y="1883.497536945813"/>
+        </scene>
+        <!--Workout Table-->
+        <scene sceneID="dp3-n3-72u">
+            <objects>
+                <viewController id="nuX-2E-1P6" customClass="workoutTable" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wRT-Tb-fgb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rIo-IU-ebz">
+                                <rect key="frame" x="0.0" y="114" width="375" height="698"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutCell" id="UyS-KD-JYX">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UyS-KD-JYX" id="8rW-dT-xTi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nuX-2E-1P6" id="OK2-aN-TzU"/>
+                                    <outlet property="delegate" destination="nuX-2E-1P6" id="5KN-gJ-76r"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbJ-8r-yXG">
+                                <rect key="frame" x="16" y="57" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="nuX-2E-1P6" eventType="touchUpInside" id="IGf-O3-LkZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xKq-r1-GRf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8q-Fu-ORJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639.20000000000005" y="1880.5418719211823"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="ULQ-dS-4ol">
