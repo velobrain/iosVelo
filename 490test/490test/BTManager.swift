@@ -56,7 +56,7 @@ class BTmanager: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        disconnectFromDevice() // DELETE THIS PROBABLY
+        //disconnectFromDevice() // DELETE THIS PROBABLY
         super.viewDidAppear(animated)
         refreshScanView()
         print("View Cleared")

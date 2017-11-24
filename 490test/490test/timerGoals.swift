@@ -9,8 +9,11 @@
 import UIKit
 
 class timerGoals: UIViewController {
-
     
+    let phoneSensor = PhoneSensorManager()
+    var pitch = 0.0
+    var roll = 0.0
+    var yaw = 0.0
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var speedG: UILabel!
     @IBOutlet weak var heartG: UILabel!
@@ -28,12 +31,17 @@ class timerGoals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        phoneSensor.startDeviceMotion()
         speedG.text = speedP
         heartG.text = heartP
         timeG.text = timeP
         timeLbl.text = String(counter)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+      
     }
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -63,17 +71,7 @@ class timerGoals: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
