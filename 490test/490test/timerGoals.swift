@@ -9,29 +9,13 @@
 import UIKit
 
 class timerGoals: UIViewController {
-    
+    //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()
-    
     var pitch = 0.0
     var roll = 0.0
     var yaw = 0.0
-    @IBOutlet weak var backBtn: UIButton!
-    @IBOutlet weak var speedG: UILabel!
-    @IBOutlet weak var heartG: UILabel!
-    @IBOutlet weak var timeG: UILabel!
-    @IBOutlet weak var timeLbl: UILabel!
-    @IBOutlet weak var stPaLbl: UIButton!
-    @IBOutlet weak var stopLbl: UIButton!
-    var timeP:String!
-    var speedP:String!
-    var heartP:String!
-    
-    var counter = 0.0
-    var timer = Timer()
-    var sensorTimer: Timer!
-    var isPlaying = false
-    var count: Int = 0
     var inclinationCollection = [Double]()
+    var sensorTimer: Timer!
     
     func getSensorValues() {
         self.sensorTimer = Timer(fire: Date(), interval: (1.0/5.0), repeats: true, block: { (sensorTimer) in
@@ -40,10 +24,72 @@ class timerGoals: UIViewController {
             self.roll = self.phoneSensor.getRoll()
             self.yaw = self.phoneSensor.getYaw()
             self.inclinationCollection.append(self.pitch)
-                
         })
         RunLoop.current.add(self.sensorTimer!, forMode: .defaultRunLoopMode)
-      
+    }
+    
+    //------------------------------------------------
+    
+    
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var speedG: UILabel!
+    @IBOutlet weak var heartG: UILabel!
+    @IBOutlet weak var timeG: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var stPaLbl: UIButton!
+    @IBOutlet weak var stopLbl: UIButton!
+    
+    var timeP:String!
+    var speedP:String!
+    var heartP:String!
+    var timer = Timer()
+    var minutes: Int = 0
+    var seconds: Int = 0
+    var startCountdown: Bool = true
+    
+  
+    
+
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func stopBtn(_ sender: Any) {
+        timer.invalidate()
+        startCountdown = false
+        seconds = 0
+        minutes = 0
+        timeLbl.text = "\(minutes):\(seconds)"
+    }
+    
+    @IBAction func stPa(_ sender: Any) {
+        if startCountdown == true{
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerGoals.updateCountdown), userInfo: nil, repeats: true)
+            startCountdown = false
+        }
+    }
+    
+    //TODO: Fix -1:59 bug
+    @objc func updateCountdown() {
+        
+        if(minutes == 0 && seconds == 0) {
+            seconds = 0
+            minutes = 0
+            timeLbl.text = "\(minutes):\(seconds)"
+            timer.invalidate()
+            print("done workout")
+          
+            startCountdown = true
+        }
+        if seconds == 0 {
+            minutes -= 1
+            seconds = 60
+        }
+       
+         seconds -= 1
+        
+        timeLbl.text = "\(minutes):\(seconds)"
     }
     
     override func viewDidLoad() {
@@ -53,36 +99,14 @@ class timerGoals: UIViewController {
         speedG.text = speedP
         heartG.text = heartP
         timeG.text = timeP
-        timeLbl.text = String(counter)
+        
+        minutes = Int(timeP)!
+      
+        timeLbl.text = "\(timeP!):00"
         // Do any additional setup after loading the view.
     }
     
-    
-    
-    
-    @IBAction func backBtn(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func stopBtn(_ sender: Any) {
-    }
-    
-    @IBAction func stPa(_ sender: Any) {
-        if (!isPlaying){
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerGoals.UpdateTimer), userInfo: nil, repeats: true)
-            
-        }
-        else{
-            timer.invalidate()
-            isPlaying = false
-        }
-        
-        
-    }
-    
-    @objc func UpdateTimer(){
-        counter = counter + 0.1
-        timeLbl.text = String(format: "%.lf",counter)
-    }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

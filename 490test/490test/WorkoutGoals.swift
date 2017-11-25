@@ -12,11 +12,6 @@ import Firebase
 
 class WorkoutGoals: UIViewController, UITextFieldDelegate {
 
-    var simpleBLE: SimpleBluetoothIO!
-    
-    
-    
-    
     @IBOutlet weak var placeHolder: UILabel!
     
     @IBOutlet weak var placeHolder2: UILabel!
@@ -145,7 +140,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         weightIn.delegate = self
         removeKB()
         
-        simpleBLE = SimpleBluetoothIO(serviceUUID: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E", delegate: self)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -171,11 +166,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
 
 }
 
-extension WorkoutGoals: SimpleBluetoothIODelegate {
-    func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
-        print(value)
-        }
-    }
+
 
 
 
