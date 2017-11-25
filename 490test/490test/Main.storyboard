@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uNU-KR-Vbk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Lr-4U-gQ0">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -412,11 +412,44 @@
                         <outlet property="stopLbl" destination="4GP-KR-2wj" id="svm-v2-Mau"/>
                         <outlet property="timeG" destination="t6R-Lr-SW3" id="Xsb-H0-uyP"/>
                         <outlet property="timeLbl" destination="JDe-Nf-JZc" id="gq9-Zi-33E"/>
+                        <segue destination="9Lr-4U-gQ0" kind="show" identifier="goToLoadingScreen" id="gKU-Wa-oK9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IU-Rk-29d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1760.8" y="125.4872563718141"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="a8Y-Xs-cz9">
+            <objects>
+                <viewController id="9Lr-4U-gQ0" customClass="LoadingViewController" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bjf-9T-nHe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onJ-Dg-HEM">
+                                <rect key="frame" x="58" y="391" width="271" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNd-AJ-5C6">
+                                <rect key="frame" x="58" y="249" width="271" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Od1-Jf-TI2"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingBar" destination="onJ-Dg-HEM" id="phn-Mf-hH0"/>
+                        <outlet property="userHelpLabel" destination="lNd-AJ-5C6" id="css-NK-qUj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMc-ND-EXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2591" y="71"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="7ut-tc-zMR">

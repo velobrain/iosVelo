@@ -76,10 +76,10 @@ class timerGoals: UIViewController {
         if(minutes == 0 && seconds == 0) {
             seconds = 0
             minutes = 0
+            goToLoadingScreen()
             timeLbl.text = "\(minutes):\(seconds)"
             timer.invalidate()
             print("done workout")
-          
             startCountdown = true
         }
         if seconds == 0 {
@@ -111,6 +111,10 @@ class timerGoals: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func goToLoadingScreen() {
+        self.performSegue(withIdentifier: "goToLoadingScreen", sender: self)
     }
 }
 
