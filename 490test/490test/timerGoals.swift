@@ -39,10 +39,7 @@ class timerGoals: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-      
-    }
+    
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
