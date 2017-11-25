@@ -11,6 +11,7 @@ import UIKit
 class timerGoals: UIViewController {
     
     let phoneSensor = PhoneSensorManager()
+    
     var pitch = 0.0
     var roll = 0.0
     var yaw = 0.0
@@ -27,17 +28,36 @@ class timerGoals: UIViewController {
     
     var counter = 0.0
     var timer = Timer()
+    var sensorTimer: Timer!
     var isPlaying = false
+    var count: Int = 0
+    var inclinationCollection = [Double]()
+    
+    func getSensorValues() {
+        self.sensorTimer = Timer(fire: Date(), interval: (1.0/5.0), repeats: true, block: { (sensorTimer) in
+            self.phoneSensor.startDeviceMotion()
+            self.pitch = self.phoneSensor.getPitch()
+            self.roll = self.phoneSensor.getRoll()
+            self.yaw = self.phoneSensor.getYaw()
+            self.inclinationCollection.append(self.pitch)
+                
+        })
+        RunLoop.current.add(self.sensorTimer!, forMode: .defaultRunLoopMode)
+      
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         phoneSensor.startDeviceMotion()
+        getSensorValues()
         speedG.text = speedP
         heartG.text = heartP
         timeG.text = timeP
         timeLbl.text = String(counter)
         // Do any additional setup after loading the view.
     }
+    
+    
     
     
     @IBAction func backBtn(_ sender: Any) {

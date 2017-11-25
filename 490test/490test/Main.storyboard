@@ -216,7 +216,7 @@
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="openModal:" destination="EGs-R2-WNL" eventType="touchUpInside" id="l2w-hh-BQS"/>
-                                    <segue destination="pxH-wl-x0p" kind="presentation" identifier="goalsNext" id="6DR-sn-D4t"/>
+                                    <segue destination="pxH-wl-x0p" kind="show" identifier="goalsNext" id="6DR-sn-D4t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef5-y2-nWX">

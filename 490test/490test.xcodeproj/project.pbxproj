@@ -116,6 +116,28 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		768EF2051FC915920077D25F /* OldBLEClasses */ = {
+			isa = PBXGroup;
+			children = (
+				765E7D8E1FBE8C4B00B3FA02 /* UUIDKey.swift */,
+				76A0ABA71FBF6027007C9343 /* BTManager.swift */,
+				76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */,
+			);
+			path = OldBLEClasses;
+			sourceTree = "<group>";
+		};
+		768EF2061FC915D70077D25F /* SignupProfileControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D9504E401FC62A4200B88213 /* profileVC.swift */,
+				764D85C01FB528E60007754E /* signuplogincontroller.swift */,
+				764D85BE1FB5078C0007754E /* ProfileController.swift */,
+				D9A443E51FB915AB00B6A62F /* signupVC.swift */,
+				D9C310151FB90887004638FE /* loginVC.swift */,
+			);
+			path = SignupProfileControllers;
+			sourceTree = "<group>";
+		};
 		D9B23B501FA67E8700BF1005 = {
 			isa = PBXGroup;
 			children = (
@@ -140,20 +162,14 @@
 				D9B23B5C1FA67E8700BF1005 /* AppDelegate.swift */,
 				D9B23B731FA6896100BF1005 /* WorkoutGoals.swift */,
 				D9B23B5E1FA67E8700BF1005 /* ViewController.swift */,
-				765E7D8E1FBE8C4B00B3FA02 /* UUIDKey.swift */,
-				764D85BE1FB5078C0007754E /* ProfileController.swift */,
-				76A0ABA71FBF6027007C9343 /* BTManager.swift */,
+				768EF2051FC915920077D25F /* OldBLEClasses */,
+				768EF2061FC915D70077D25F /* SignupProfileControllers */,
 				767066221FB3E30700283426 /* MainMenu.swift */,
 				768EF1FD1FC8C1A30077D25F /* Classes */,
 				D9B23B751FA6A8AA00BF1005 /* timerGoals.swift */,
 				765E7D8A1FBE69F700B3FA02 /* Main.storyboard */,
 				7648AD311FC540820045DCA7 /* workoutTable.swift */,
-				D9504E401FC62A4200B88213 /* profileVC.swift */,
-				76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */,
-				764D85C01FB528E60007754E /* signuplogincontroller.swift */,
-				D9A443E51FB915AB00B6A62F /* signupVC.swift */,
 				7648AD331FC5DDB20045DCA7 /* WorkoutDetails.swift */,
-				D9C310151FB90887004638FE /* loginVC.swift */,
 				D9B23B661FA67E8700BF1005 /* Assets.xcassets */,
 				768EF1FE1FC8C1F10077D25F /* icons */,
 				D9B23B681FA67E8700BF1005 /* LaunchScreen.storyboard */,
