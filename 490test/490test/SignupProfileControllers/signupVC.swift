@@ -122,8 +122,6 @@ class signupVC: UIViewController {
         hieghtRegField.clipsToBounds = true
         regBtnShape.layer.cornerRadius = 20.0
         regBtnShape.clipsToBounds = true
-        
-        
     }
     
     
@@ -132,8 +130,6 @@ class signupVC: UIViewController {
         cornersColours()
         super.viewDidLoad()
         self.removeKB()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

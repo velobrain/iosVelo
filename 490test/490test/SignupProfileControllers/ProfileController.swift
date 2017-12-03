@@ -74,8 +74,6 @@ class ProfileController: UIViewController {
             self.userHeightLbl.text = value?["height"] as? String ?? ""
             self.userWeightLbl.text = value?["weight"] as? String ?? ""
         })
-        
-        
     }
     
     

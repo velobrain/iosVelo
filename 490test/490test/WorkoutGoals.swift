@@ -139,10 +139,6 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         timeIn.delegate = self
         weightIn.delegate = self
         removeKB()
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
    

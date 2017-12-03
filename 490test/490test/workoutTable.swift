@@ -25,11 +25,6 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     var ref: DatabaseReference!
     let user = Auth.auth().currentUser
     
-    
-    
-    
-   
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(recordedAtList.count)
     }
@@ -63,9 +58,7 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
             heartRateList.append(heartRateToAppend)
             speedList.append(speedToAppend)
             timeList.append(timeToAppend)
-            
         }
-      
     }
     
     
@@ -81,9 +74,7 @@ class workoutTable: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     override func viewDidAppear(_ animated: Bool ) {
-       
         tableView.reloadData()
-        
     }
     
     

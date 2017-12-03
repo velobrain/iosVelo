@@ -28,7 +28,7 @@ class timerGoals: UIViewController {
         RunLoop.current.add(self.sensorTimer!, forMode: .defaultRunLoopMode)
     }
     
-    //------------------------------------------------
+    //Mark-----------Phone Sensor--------------------
     
     
     @IBOutlet weak var backBtn: UIButton!

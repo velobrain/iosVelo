@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		763DB7441FD3A7F100638C04 /* FireBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DB7431FD3A7F100638C04 /* FireBaseHelper.swift */; };
+		763DB7461FD3C75C00638C04 /* InProgressWorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DB7451FD3C75C00638C04 /* InProgressWorkoutManager.swift */; };
 		7648AD321FC540820045DCA7 /* workoutTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7648AD311FC540820045DCA7 /* workoutTable.swift */; };
 		7648AD341FC5DDB20045DCA7 /* WorkoutDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7648AD331FC5DDB20045DCA7 /* WorkoutDetails.swift */; };
 		764D85BF1FB5078C0007754E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764D85BE1FB5078C0007754E /* ProfileController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		454851B115E1234C7F81EF66 /* Pods_490test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_490test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.release.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.release.xcconfig"; sourceTree = "<group>"; };
+		763DB7431FD3A7F100638C04 /* FireBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseHelper.swift; sourceTree = "<group>"; };
+		763DB7451FD3C75C00638C04 /* InProgressWorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressWorkoutManager.swift; sourceTree = "<group>"; };
 		7648AD311FC540820045DCA7 /* workoutTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutTable.swift; sourceTree = "<group>"; };
 		7648AD331FC5DDB20045DCA7 /* WorkoutDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetails.swift; sourceTree = "<group>"; };
 		764D85BE1FB5078C0007754E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				768EF1F71FC88E210077D25F /* PhoneSensorManager.swift */,
 				768EF2031FC9022C0077D25F /* BLEInterface.swift */,
 				76EDFBE91FC943D8009638C9 /* WorkoutAnalyzer.swift */,
+				763DB7431FD3A7F100638C04 /* FireBaseHelper.swift */,
+				763DB7451FD3C75C00638C04 /* InProgressWorkoutManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -348,12 +354,14 @@
 				D9B23B5F1FA67E8700BF1005 /* ViewController.swift in Sources */,
 				767066231FB3E30700283426 /* MainMenu.swift in Sources */,
 				76A0ABAA1FBF6657007C9343 /* PeripheralTableViewCell.swift in Sources */,
+				763DB7441FD3A7F100638C04 /* FireBaseHelper.swift in Sources */,
 				D9504E411FC62A4200B88213 /* profileVC.swift in Sources */,
 				768EF1F81FC88E210077D25F /* PhoneSensorManager.swift in Sources */,
 				764D85C11FB528E60007754E /* signuplogincontroller.swift in Sources */,
 				D9B23B651FA67E8700BF1005 /* _90test.xcdatamodeld in Sources */,
 				7648AD321FC540820045DCA7 /* workoutTable.swift in Sources */,
 				768EF2041FC9022C0077D25F /* BLEInterface.swift in Sources */,
+				763DB7461FD3C75C00638C04 /* InProgressWorkoutManager.swift in Sources */,
 				D9B23B761FA6A8AA00BF1005 /* timerGoals.swift in Sources */,
 				7648AD341FC5DDB20045DCA7 /* WorkoutDetails.swift in Sources */,
 				76EDFBEA1FC943D8009638C9 /* WorkoutAnalyzer.swift in Sources */,
