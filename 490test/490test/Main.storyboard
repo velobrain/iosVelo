@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EGs-R2-WNL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uNU-KR-Vbk">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -303,7 +303,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m5-Ni-Zte">
-                                <rect key="frame" x="0.0" y="30" width="375" height="192"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Start Workout" image="icons8-cyclist.png">
@@ -313,18 +313,26 @@
                                     <action selector="startWorkoutButton:" destination="q9M-dN-nPU" eventType="touchUpInside" id="4FE-Nr-nhy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8V-EE-pVt">
+                                <rect key="frame" x="16" y="55" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cLs-hh-8km"/>
                     </view>
                     <connections>
+                        <outlet property="greetLabel" destination="I8V-EE-pVt" id="HMp-uG-coY"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSettings" id="0xc-H3-YnC"/>
                         <segue destination="EGs-R2-WNL" kind="show" identifier="goToWorkoutGoals" id="D3C-V3-9VP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVs-4S-3h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1108" y="1049.3253373313344"/>
+            <point key="canvasLocation" x="-1108" y="1049.2610837438424"/>
         </scene>
         <!--Timer Goals-->
         <scene sceneID="TiP-ss-j7N">
@@ -785,7 +793,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biD-eB-LcD">
-                                <rect key="frame" x="20" y="44" width="40" height="40"/>
+                                <rect key="frame" x="20.333333333333336" y="44.333333333333329" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dkh-Ct-AFF"/>
                                     <constraint firstAttribute="width" constant="40" id="uTu-tu-sOI"/>
@@ -796,7 +804,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Quv-Zt-TLB">
-                                <rect key="frame" x="20" y="230" width="333" height="41"/>
+                                <rect key="frame" x="20.333333333333343" y="233.33333333333331" width="372" height="41"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="PXL-Dd-qan"/>
@@ -807,7 +815,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ost-fq-Krt">
-                                <rect key="frame" x="20" y="288" width="333" height="41"/>
+                                <rect key="frame" x="20.333333333333343" y="291.33333333333337" width="372" height="41"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="LRV-U5-5uL"/>
@@ -818,7 +826,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjJ-5E-KBD">
-                                <rect key="frame" x="20" y="390" width="333" height="41"/>
+                                <rect key="frame" x="20.333333333333343" y="393.33333333333337" width="372" height="41"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="1kb-NU-val"/>
@@ -829,7 +837,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-Ay-Rym">
-                                <rect key="frame" x="20" y="454" width="333" height="41"/>
+                                <rect key="frame" x="20.333333333333343" y="457.33333333333337" width="372" height="41"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="pwS-YX-XJl"/>
@@ -840,7 +848,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y38-FE-HGl">
-                                <rect key="frame" x="20" y="518" width="333" height="41"/>
+                                <rect key="frame" x="20.333333333333343" y="521.33333333333326" width="372" height="41"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="372" id="pw1-8p-5qg"/>
@@ -851,7 +859,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crS-z1-ywM">
-                                <rect key="frame" x="20" y="668" width="333" height="39"/>
+                                <rect key="frame" x="20.333333333333343" y="671.33333333333326" width="372" height="39"/>
                                 <color key="backgroundColor" red="0.44705882349999998" green="0.84705882349999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="DAt-gn-3RG"/>
@@ -866,14 +874,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike.png" translatesAutoresizingMaskIntoConstraints="NO" id="haj-sW-Qiy">
-                                <rect key="frame" x="156" y="76" width="61" height="97"/>
+                                <rect key="frame" x="156.33333333333331" y="76.333333333333343" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="5X6-YK-Hgj"/>
                                     <constraint firstAttribute="height" constant="79" id="e6i-DL-0JW"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Height" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVP-aj-ptT">
-                                <rect key="frame" x="20" y="582" width="333" height="41"/>
+                                <rect key="frame" x="20.333333333333343" y="585.33333333333326" width="372" height="41"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="1" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="7Eq-ek-hGn"/>
@@ -884,7 +892,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VeloBrain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbi-MZ-v4O">
-                                <rect key="frame" x="143" y="175" width="91" height="39"/>
+                                <rect key="frame" x="143.33333333333334" y="178.33333333333331" width="130.00000000000003" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="6gQ-P5-LoY"/>
                                     <constraint firstAttribute="width" constant="130" id="xB3-6R-sB5"/>

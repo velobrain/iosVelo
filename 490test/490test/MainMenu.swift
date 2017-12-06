@@ -11,6 +11,10 @@ import UIKit
 
 class MainMenu: UIViewController {
     
+    var greeter = FireBaseHelper()
+   
+    @IBOutlet weak var greetLabel: UILabel!
+    
     @IBAction func settingsButton(_ sender: Any) {
         performSegue(withIdentifier: "goToSettings", sender: self)
         
@@ -20,6 +24,13 @@ class MainMenu: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let welcome = "Welcome back: "
+        let name = greeter.getUserName()
+         greetLabel.text = welcome + name
     }
     
     @IBAction func gotoLoginOrSignupButton(_ sender: Any) {

@@ -8,45 +8,61 @@
 // Utility class for getting userID and reading/writing data to Firebase.
 import Foundation
 import Firebase
-
 class FireBaseHelper {
     var ref: DatabaseReference!
+    var name:String = ""
+    var height:String = ""
+    var weight:String = ""
     
+    init() {
+        userNameAsync()
+        userHeightAysnc()
+        userWeightAsync()
+    }
+   
     //returns the current user's ID
     func getCurrentUserID() -> String? {
         return (Auth.auth().currentUser?.uid)!
     }
     
-    func getUserName() -> String {
+    func userNameAsync() {
         let uid = getCurrentUserID()
-        var name:String = ""
+        print(uid!)
         ref = Database.database().reference()
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-             name = value?["name"] as? String ?? ""
+            self.name = value?["name"] as? String ?? ""
         })
+    }
+    
+    func getUserName() -> String {
         return name
     }
     
-    func getUserHeight() -> String {
+    func userHeightAysnc() {
         let uid = getCurrentUserID()
-        var height:String = ""
         ref = Database.database().reference()
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-            height = value?["height"] as? String ?? ""
+            self.height = value?["height"] as? String ?? ""
         })
+    }
+    
+    func getUserHeight() -> String {
         return height
     }
     
-    func getUserWeight() -> String {
+    
+    func userWeightAsync(){
         let uid = getCurrentUserID()
-        var weight:String = ""
         ref = Database.database().reference()
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-            weight = value?["weight"] as? String ?? ""
+            self.weight = value?["weight"] as? String ?? ""
         })
+    }
+    
+    func getUserWeight() -> String {
         return weight
     }
     

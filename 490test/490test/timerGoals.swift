@@ -31,6 +31,11 @@ class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     
     
+    var ble: SimpleBluetoothIO!
+    
+    
+    
+    
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var speedG: UILabel!
     @IBOutlet weak var heartG: UILabel!
@@ -94,6 +99,7 @@ class timerGoals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ble = SimpleBluetoothIO(serviceUUID: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E", delegate: self)
         phoneSensor.startDeviceMotion()
         getSensorValues()
         speedG.text = speedP
@@ -103,6 +109,8 @@ class timerGoals: UIViewController {
         minutes = Int(timeP)!
       
         timeLbl.text = "\(timeP!):00"
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -117,6 +125,12 @@ class timerGoals: UIViewController {
         self.performSegue(withIdentifier: "goToLoadingScreen", sender: self)
     }
 }
+
+extension timerGoals: SimpleBluetoothIODelegate {
+        func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
+                print(value)
+                }
+        }
 
 
 
