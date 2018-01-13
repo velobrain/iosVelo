@@ -11,10 +11,12 @@ import UIKit
 class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()
+    let currentWorkout = InProgessWorkoutManager()
     var pitch = 0.0
     var roll = 0.0
     var yaw = 0.0
-    var inclinationCollection = [Double]()
+    
+//    var inclinationCollection = [Double]()
     var sensorTimer: Timer!
     
     func getSensorValues() {
@@ -23,7 +25,7 @@ class timerGoals: UIViewController {
             self.pitch = self.phoneSensor.getPitch()
             self.roll = self.phoneSensor.getRoll()
             self.yaw = self.phoneSensor.getYaw()
-            self.inclinationCollection.append(self.pitch)
+//            self.inclinationCollection.append(self.pitch)
         })
         RunLoop.current.add(self.sensorTimer!, forMode: .defaultRunLoopMode)
     }
@@ -129,6 +131,7 @@ class timerGoals: UIViewController {
 extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
                 print(value)
+            self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
                 }
         }
 
