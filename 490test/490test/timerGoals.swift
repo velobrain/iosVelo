@@ -132,10 +132,15 @@ extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
                 print(value)
 
-            self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
-   
+                self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
+                if (self.currentWorkout.onTrackForGoals()) {
+                    var speech = TextToSpeech()
+                    speech.talk()
                 }
+                
         }
+}
+
 
 
 
