@@ -129,6 +129,7 @@ class timerGoals: UIViewController {
 extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
                 print(value)
+                
                 }
         }
 

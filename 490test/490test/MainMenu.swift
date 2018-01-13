@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class MainMenu: UIViewController {
     
@@ -21,6 +22,7 @@ class MainMenu: UIViewController {
     }
     @IBAction func startWorkoutButton(_ sender: Any) {
         performSegue(withIdentifier:"goToWorkoutGoals" , sender: self)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class MainMenu: UIViewController {
         let welcome = "Welcome back: "
         let name = greeter.getUserName()
          greetLabel.text = welcome + name
+        
     }
     
     @IBAction func gotoLoginOrSignupButton(_ sender: Any) {
@@ -43,13 +46,5 @@ class MainMenu: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

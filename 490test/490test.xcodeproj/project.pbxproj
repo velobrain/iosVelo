@@ -25,6 +25,7 @@
 		768EF2041FC9022C0077D25F /* BLEInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768EF2031FC9022C0077D25F /* BLEInterface.swift */; };
 		76A0ABA81FBF6027007C9343 /* BTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0ABA71FBF6027007C9343 /* BTManager.swift */; };
 		76A0ABAA1FBF6657007C9343 /* PeripheralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */; };
+		76D4B98E200A9D7400539DC9 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D4B98D200A9D7400539DC9 /* TextToSpeech.swift */; };
 		76EDFBEA1FC943D8009638C9 /* WorkoutAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EDFBE91FC943D8009638C9 /* WorkoutAnalyzer.swift */; };
 		76EDFBEC1FC944CE009638C9 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EDFBEB1FC944CE009638C9 /* LoadingViewController.swift */; };
 		CC25FD323A19E5273551E4AC /* Pods_490test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454851B115E1234C7F81EF66 /* Pods_490test.framework */; };
@@ -63,6 +64,7 @@
 		768EF2031FC9022C0077D25F /* BLEInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEInterface.swift; sourceTree = "<group>"; };
 		76A0ABA71FBF6027007C9343 /* BTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTManager.swift; sourceTree = "<group>"; };
 		76A0ABA91FBF6657007C9343 /* PeripheralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralTableViewCell.swift; sourceTree = "<group>"; };
+		76D4B98D200A9D7400539DC9 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		76EDFBE91FC943D8009638C9 /* WorkoutAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutAnalyzer.swift; sourceTree = "<group>"; };
 		76EDFBEB1FC944CE009638C9 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D07AE287377DFCC019C9575A /* Pods-490test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				768EF1F71FC88E210077D25F /* PhoneSensorManager.swift */,
 				768EF2031FC9022C0077D25F /* BLEInterface.swift */,
 				76EDFBE91FC943D8009638C9 /* WorkoutAnalyzer.swift */,
+				76D4B98D200A9D7400539DC9 /* TextToSpeech.swift */,
 				763DB7431FD3A7F100638C04 /* FireBaseHelper.swift */,
 				763DB7451FD3C75C00638C04 /* InProgressWorkoutManager.swift */,
 			);
@@ -368,6 +371,7 @@
 				D9A443E61FB915AB00B6A62F /* signupVC.swift in Sources */,
 				D9B23B741FA6896100BF1005 /* WorkoutGoals.swift in Sources */,
 				D9C310161FB90887004638FE /* loginVC.swift in Sources */,
+				76D4B98E200A9D7400539DC9 /* TextToSpeech.swift in Sources */,
 				D9B23B5D1FA67E8700BF1005 /* AppDelegate.swift in Sources */,
 				765E7D8F1FBE8C4B00B3FA02 /* UUIDKey.swift in Sources */,
 				76A0ABA81FBF6027007C9343 /* BTManager.swift in Sources */,
