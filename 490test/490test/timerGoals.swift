@@ -133,7 +133,7 @@ extension timerGoals: SimpleBluetoothIODelegate {
                 print(value)
 
             self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
- origin/workoutProgress
+   
                 }
         }
 
