@@ -36,12 +36,7 @@ class timerGoals: UIViewController {
     
     
     var ble: SimpleBluetoothIO!
-    
-   
-    
-    
-    
-    
+     var speech = TextToSpeech()
     
     
     @IBOutlet weak var backBtn: UIButton!
@@ -60,9 +55,6 @@ class timerGoals: UIViewController {
     var seconds: Int = 0
     var startCountdown: Bool = true
     
-  
-    
-
     @IBAction func backBtn(_ sender: Any) {
         disconnectFromBluetooth()
         dismiss(animated: true, completion: nil)
@@ -148,10 +140,7 @@ class timerGoals: UIViewController {
         
         
     }
-    
-    var speech = TextToSpeech()
-    
-
+   
 }
 
 

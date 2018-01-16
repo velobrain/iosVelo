@@ -26,7 +26,7 @@ class InProgessWorkoutManager {
         self.pitchArray.append(pitch)
         self.totalDistArray.append(dist)
         self.pulseArray.append(pulse)
-//        print(self.pitchArray)
+//      print(self.pitchArray)
     }
     
     func onTrackForGoals(speedGoal: Double, timeGoal: Int) -> Bool {

@@ -54,6 +54,7 @@ extension SimpleBluetoothIO: CBCentralManagerDelegate {
         if let connectedPeripheral = connectedPeripheral {
             connectedPeripheral.delegate = self
             centralManager.connect(connectedPeripheral, options: nil)
+            print("Connected to Device")
         }
         centralManager.stopScan()
     }
