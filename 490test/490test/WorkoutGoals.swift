@@ -35,7 +35,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         print("Button has been pressed")
     }
     
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
