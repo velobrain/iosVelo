@@ -35,7 +35,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         print("Button has been pressed")
     }
     
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -65,10 +65,28 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
     }
     
     func pushWorkout() {
-        let speed = speedIn.text
-        let heartRate = heartIn.text
-        let time = timeIn.text
-        let userID = Auth.auth().currentUser?.uid
+        guard let speed = speedIn.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let heartRate = heartIn.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let time = timeIn.text else {
+            // Change this to an alert view later
+            print("Invalid Input")
+            return
+        }
+        
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print ("something went wrong")
+            return
+        }
     
         let ref = Database.database().reference(fromURL: "https://velobrain-f3c9d.firebaseio.com/")
         //let userRef = ref.child("users").child(userID)
@@ -79,7 +97,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         
         today = getTodayString()
         
-        let workoutref = ref.child("workouts").child(userID!).child(today);
+        let workoutref = ref.child("workouts").child(userID).child(today);
          let recordedAt = today
         let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time, "recordedAt" : recordedAt]
         

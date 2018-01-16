@@ -135,7 +135,7 @@ class timerGoals: UIViewController {
             print("diconnected sucessfully")
             ble.centralManager.cancelPeripheralConnection(ble.connectedPeripheral!)
         } else {
-            print("error")
+            print("error disconnecting - no device was connected")
         }
         
         
