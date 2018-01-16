@@ -33,6 +33,8 @@ class InProgessWorkoutManager {
         // return true or false if they are on track to meet workout goals
         var timeElapsed = totalDistArray.count * 5
         var currentSpeed = Int(totalDistArray.last!) / timeElapsed
+        print(timeElapsed)
+        print(currentSpeed)
         if (currentSpeed >= speedGoal) {
             return true
         }
