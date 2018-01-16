@@ -70,10 +70,15 @@ class timerGoals: UIViewController {
     }
     
     @IBAction func stPa(_ sender: Any) {
-        if startCountdown == true{
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerGoals.updateCountdown), userInfo: nil, repeats: true)
-            startCountdown = false
+        if (!ble.connectedToDevice) {
+            print("not connected yet")
+        } else {
+            if startCountdown == true{
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerGoals.updateCountdown), userInfo: nil, repeats: true)
+                startCountdown = false
+            }
         }
+        
     }
     
     //TODO: Fix -1:59 bug
@@ -139,6 +144,8 @@ class timerGoals: UIViewController {
         }
         
         
+    
+        
     }
    
 }
@@ -148,7 +155,7 @@ class timerGoals: UIViewController {
 extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
             print(value)
-
+            
             self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
             if (self.currentWorkout.onTrackForGoals(speedGoal: Double(speedGoal), timeGoal: timeGoal)) {
                 speech.talkCustom(phrase: "You are on track for your goals")

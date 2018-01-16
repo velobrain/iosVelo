@@ -17,6 +17,7 @@ class SimpleBluetoothIO: NSObject {
     
     let serviceUUID: String
     weak var delegate: SimpleBluetoothIODelegate?
+    var connectedToDevice: Bool = false
     
     var centralManager: CBCentralManager!
     var connectedPeripheral: CBPeripheral?
@@ -54,6 +55,7 @@ extension SimpleBluetoothIO: CBCentralManagerDelegate {
         if let connectedPeripheral = connectedPeripheral {
             connectedPeripheral.delegate = self
             centralManager.connect(connectedPeripheral, options: nil)
+            connectedToDevice = true
             print("Connected to Device")
         }
         centralManager.stopScan()
