@@ -15,6 +15,8 @@ class timerGoals: UIViewController {
     var pitch = 0.0
     var roll = 0.0
     var yaw = 0.0
+    var speedGoal = 0
+    var timeGoal = 0
     
 //    var inclinationCollection = [Double]()
     var sensorTimer: Timer!
@@ -106,6 +108,8 @@ class timerGoals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.speedGoal = Int(speedP)! / 60
+        self.timeGoal = Int(timeP)!
         ble = SimpleBluetoothIO(serviceUUID: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E", delegate: self)
         phoneSensor.startDeviceMotion()
         getSensorValues()
@@ -145,20 +149,24 @@ class timerGoals: UIViewController {
         
     }
     
+    var speech = TextToSpeech()
     
+
 }
 
 
 
 extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
-                print(value)
+            print(value)
 
-                self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
-                if (self.currentWorkout.onTrackForGoals()) {
-                    var speech = TextToSpeech()
-                    //speech.talk(id: 2)
-                }
+            self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
+            if (self.currentWorkout.onTrackForGoals(speedGoal: speedGoal, timeGoal: timeGoal)) {
+                speech.talkCustom(phrase: "You are on track for your goals")
+            }
+            else {
+                speech.talkCustom(phrase: "You are not on track for your goals")
+            }
                 
         }
 }
