@@ -135,10 +135,14 @@ class timerGoals: UIViewController {
     
     
     func disconnectFromBluetooth() {
-        if blePeripheral != nil {
+        if  ble.connectedPeripheral != nil {
             print("diconnected sucessfully")
-            ble.centralManager.cancelPeripheralConnection(blePeripheral!)
+            ble.centralManager.cancelPeripheralConnection(ble.connectedPeripheral!)
+        } else {
+            print("error")
         }
+        
+        
     }
     
     
@@ -153,7 +157,7 @@ extension timerGoals: SimpleBluetoothIODelegate {
                 self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
                 if (self.currentWorkout.onTrackForGoals()) {
                     var speech = TextToSpeech()
-                    speech.talk(id: 2)
+                    //speech.talk(id: 2)
                 }
                 
         }
