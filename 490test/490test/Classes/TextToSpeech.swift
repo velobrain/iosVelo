@@ -16,15 +16,24 @@ class TextToSpeech {
     let voice = AVSpeechSynthesizer()
     var coachingTipsArray : [String] = []
 
+    
+
     init() {
         // add more options
         coachingTipsArray  = ["test", "You are slow", "You are fast" , "Good job", "do you know the wae"]
     }
 
-func talk() {
-    var sayThis = AVSpeechUtterance(string: coachingTipsArray[4])
+    func talk(id: Int) {
+    var sayThis = AVSpeechUtterance(string: coachingTipsArray[id])
     voice.speak(sayThis)
 }
+    
+    func summary () {
+        var summary = "Your current progress"
+        var sayThisSummary = AVSpeechUtterance(string: summary)
+        voice.speak(sayThisSummary)
+    
+    }
     
     
 }

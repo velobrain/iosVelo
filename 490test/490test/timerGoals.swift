@@ -35,6 +35,10 @@ class timerGoals: UIViewController {
     
     var ble: SimpleBluetoothIO!
     
+   
+    
+    
+    
     
     
     
@@ -58,6 +62,7 @@ class timerGoals: UIViewController {
     
 
     @IBAction func backBtn(_ sender: Any) {
+        disconnectFromBluetooth()
         dismiss(animated: true, completion: nil)
     }
     
@@ -126,7 +131,20 @@ class timerGoals: UIViewController {
     func goToLoadingScreen() {
         self.performSegue(withIdentifier: "goToLoadingScreen", sender: self)
     }
+    
+    
+    
+    func disconnectFromBluetooth() {
+        if blePeripheral != nil {
+            print("diconnected sucessfully")
+            ble.centralManager.cancelPeripheralConnection(blePeripheral!)
+        }
+    }
+    
+    
 }
+
+
 
 extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
@@ -135,11 +153,13 @@ extension timerGoals: SimpleBluetoothIODelegate {
                 self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
                 if (self.currentWorkout.onTrackForGoals()) {
                     var speech = TextToSpeech()
-                    speech.talk()
+                    speech.talk(id: 2)
                 }
                 
         }
 }
+
+
 
 
 

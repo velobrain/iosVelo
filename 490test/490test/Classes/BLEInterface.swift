@@ -98,6 +98,13 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
        
         delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.int8Value())
     }
+    
+    
+    
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("Disconnected")
+    }
 }
 
 
