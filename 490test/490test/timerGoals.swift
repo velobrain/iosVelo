@@ -71,6 +71,9 @@ class timerGoals: UIViewController {
     
     @IBAction func stPa(_ sender: Any) {
         if (!ble.connectedToDevice) {
+            let alert = UIAlertController(title: "No Connection Error", message: "Please wait for connection", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title:"OK",style: UIAlertActionStyle.default, handler:nil))
+            self.present(alert, animated: true, completion: nil)
             print("not connected yet")
         } else {
             if startCountdown == true{
@@ -139,6 +142,7 @@ class timerGoals: UIViewController {
         if  ble.connectedPeripheral != nil {
             print("diconnected sucessfully")
             ble.centralManager.cancelPeripheralConnection(ble.connectedPeripheral!)
+            ble.connectedToDevice = false
         } else {
             print("error")
         }
