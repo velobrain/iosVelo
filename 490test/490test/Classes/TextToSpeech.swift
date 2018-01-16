@@ -24,9 +24,13 @@ class TextToSpeech {
     }
 
     func talk(id: Int) {
-    var sayThis = AVSpeechUtterance(string: coachingTipsArray[id])
-    voice.speak(sayThis)
-}
+        var sayThis = AVSpeechUtterance(string: coachingTipsArray[id])
+        voice.speak(sayThis)
+    }
+    
+    func talkCustom(phrase: String) {
+        voice.speak(AVSpeechUtterance(string: phrase))
+    }
     
     func summary () {
         var summary = "Your current progress"

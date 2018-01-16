@@ -29,9 +29,14 @@ class InProgessWorkoutManager {
 //        print(self.pitchArray)
     }
     
-    func onTrackForGoals() -> Bool {
+    func onTrackForGoals(speedGoal: Int, timeGoal: Int) -> Bool {
         // return true or false if they are on track to meet workout goals
-        return true
+        var timeElapsed = totalDistArray.count * 5
+        var currentSpeed = Int(totalDistArray.last!) / timeElapsed
+        if (currentSpeed >= speedGoal) {
+            return true
+        }
+        return false
     }
     
     func getBackOnTrack() -> String {
