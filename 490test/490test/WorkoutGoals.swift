@@ -99,7 +99,8 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         
         let workoutref = ref.child("workouts").child(userID).child(today);
          let recordedAt = today
-        let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time, "recordedAt" : recordedAt]
+        var isCurrentWorkout = true // set the current workout goals to true when its first sent to DB
+        let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time, "recordedAt" : recordedAt, "isCurrentWorkout" : isCurrentWorkout] as [String : Any]
         
         workoutref.updateChildValues(workoutValues, withCompletionBlock: { (err, ref) in
             if err != nil {

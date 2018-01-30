@@ -409,11 +409,19 @@
                                     <action selector="backBtn:" destination="pxH-wl-x0p" eventType="touchUpInside" id="RxV-Li-g5F"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bluetooth Connection Status: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3t-i8-mWq">
+                                <rect key="frame" x="12" y="238" width="347" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="lFt-Dx-Dov"/>
                     </view>
                     <connections>
+                        <outlet property="bleConnectionStatusLbl" destination="q3t-i8-mWq" id="ubu-GB-UIW"/>
                         <outlet property="heartG" destination="fqo-3u-iZN" id="5Zp-Jr-pV3"/>
                         <outlet property="speedG" destination="2mc-0Y-fkp" id="PBk-F4-wvH"/>
                         <outlet property="stPaLbl" destination="U9B-s4-gfi" id="TI8-rR-RYx"/>
@@ -425,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IU-Rk-29d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760.8" y="125.4872563718141"/>
+            <point key="canvasLocation" x="1760.8" y="124.8768472906404"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="a8Y-Xs-cz9">

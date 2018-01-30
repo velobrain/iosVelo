@@ -46,7 +46,7 @@ class timerGoals: UIViewController {
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var stPaLbl: UIButton!
     @IBOutlet weak var stopLbl: UIButton!
-    
+    @IBOutlet weak var bleConnectionStatusLbl: UILabel!
     var timeP:String!
     var speedP:String!
     var heartP:String!
@@ -108,6 +108,7 @@ class timerGoals: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bleConnectionStatusLbl.text = "Bluetooth Connection Status: Not Connected"
         self.speedGoal = Double(speedP)! / 60
         self.timeGoal = Int(timeP)!
         ble = SimpleBluetoothIO(serviceUUID: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E", delegate: self)
