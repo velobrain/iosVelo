@@ -17,13 +17,28 @@ class timerGoals: UIViewController {
     var yaw = 0.0
     var speedGoal = 0.0
     var timeGoal = 0
+    var debugMode = 1;
+    var fakeData = FakeDataGenerator()
+    
+    var fakeDataTimer: Timer!
+    
+  
+    
+    func genFakeData() {
+        self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
+            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: self.currentWorkout.totalDistArray.last ?? 0) , pulse: self.fakeData.genRandomPulse())
+            
+            print(self.currentWorkout.totalDistArray)
+           
+            
+
+        })
+        RunLoop.current.add(self.fakeDataTimer!, forMode: .defaultRunLoopMode)
+    }
+    
     
 //    var inclinationCollection = [Double]()
     var sensorTimer: Timer!
-    
-    var workOutAnalyzerTester = WorkoutAnalyzer()
-    
-    
     
     func getSensorValues() {
         self.sensorTimer = Timer(fire: Date(), interval: (1.0/5.0), repeats: true, block: { (sensorTimer) in
@@ -62,6 +77,7 @@ class timerGoals: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         disconnectFromBluetooth()
         dismiss(animated: true, completion: nil)
+        fakeDataTimer.invalidate()
     }
     
     
@@ -126,7 +142,9 @@ class timerGoals: UIViewController {
       
         timeLbl.text = "\(timeP!):00"
         
-        workOutAnalyzerTester.pushFinishedWorkout(distance: 30, averageSpeed: 23, averagePitch: 12)
+        if(debugMode == 1) {
+            genFakeData()
+        }
         
     
         // Do any additional setup after loading the view.
