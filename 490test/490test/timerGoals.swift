@@ -21,6 +21,10 @@ class timerGoals: UIViewController {
 //    var inclinationCollection = [Double]()
     var sensorTimer: Timer!
     
+    var workOutAnalyzerTester = WorkoutAnalyzer()
+    
+    
+    
     func getSensorValues() {
         self.sensorTimer = Timer(fire: Date(), interval: (1.0/5.0), repeats: true, block: { (sensorTimer) in
             self.phoneSensor.startDeviceMotion()
@@ -122,7 +126,9 @@ class timerGoals: UIViewController {
       
         timeLbl.text = "\(timeP!):00"
         
+        workOutAnalyzerTester.pushFinishedWorkout(distance: 30, averageSpeed: 23, averagePitch: 12)
         
+    
         // Do any additional setup after loading the view.
     }
     
@@ -147,13 +153,9 @@ class timerGoals: UIViewController {
         } else {
             print("error disconnecting - no device was connected")
         }
-        
-        
-    
-        
     }
    
-}
+}// end class
 
 
 

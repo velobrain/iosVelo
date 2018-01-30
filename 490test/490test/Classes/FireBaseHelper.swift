@@ -14,6 +14,8 @@ class FireBaseHelper {
     var height:String = ""
     var weight:String = ""
     
+    
+    
     init() {
         userNameAsync()
         userHeightAysnc()
@@ -34,6 +36,7 @@ class FireBaseHelper {
             self.name = value?["name"] as? String ?? ""
         })
     }
+    
     
     func getUserName() -> String {
         return name
