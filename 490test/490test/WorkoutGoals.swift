@@ -97,7 +97,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         
         today = getTodayString()
         
-        let workoutref = ref.child("workouts").child(userID).child(today);
+        let workoutref = ref.child("workouts").child(userID).childByAutoId();
          let recordedAt = today
         var isCurrentWorkout = true // set the current workout goals to true when its first sent to DB
         let workoutValues = ["speed" : speed, "heartRate" : heartRate, "time" : time, "recordedAt" : recordedAt, "isCurrentWorkout" : isCurrentWorkout] as [String : Any]
