@@ -11,21 +11,22 @@ import Foundation
 //used while the workout is in progress/
 //Used by the coach class to get info.
 // handles incoming BLE data by averaging it etc
+var pitchArray =  [Double]()
+var totalDistArray = [Double]()
+var pulseArray =  [Double]()
 class InProgessWorkoutManager {
-    var pitchArray: [Double]
-    var totalDistArray: [Double]
-    var pulseArray: [Double]
+    
     
     init() {
-        self.pitchArray = []
-        self.totalDistArray = []
-        self.pulseArray = []
+        pitchArray = []
+        totalDistArray = []
+        pulseArray = []
     }
     
     func newEntry(pitch: Double, dist: Double, pulse: Double) {
-        self.pitchArray.append(pitch)
-        self.totalDistArray.append(dist)
-        self.pulseArray.append(pulse)
+        pitchArray.append(pitch)
+        totalDistArray.append(dist)
+        pulseArray.append(pulse)
 //      print(self.pitchArray)
     }
     

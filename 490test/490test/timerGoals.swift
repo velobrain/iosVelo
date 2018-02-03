@@ -26,7 +26,7 @@ class timerGoals: UIViewController {
     
     func genFakeData() {
         self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
-            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: self.currentWorkout.totalDistArray.last ?? 0) , pulse: self.fakeData.genRandomPulse())
+            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0) , pulse: self.fakeData.genRandomPulse())
         })
         RunLoop.current.add(self.fakeDataTimer!, forMode: .defaultRunLoopMode)
     }
@@ -73,12 +73,12 @@ class timerGoals: UIViewController {
         disconnectFromBluetooth()
         dismiss(animated: true, completion: nil)
         fakeDataTimer.invalidate()
+        sensorTimer.invalidate()
     }
     
     
     @IBAction func stopBtn(_ sender: Any) {
         timer.invalidate()
-        sensorTimer.invalidate()
         startCountdown = false
         seconds = 0
         minutes = 0

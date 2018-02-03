@@ -11,6 +11,7 @@ import Firebase
 // class for post workout analyis chart view will use this class to show results and compare against goals
 class WorkoutAnalyzer{
     var ref: DatabaseReference!
+    
 
     func pushFinishedWorkout(distance :Double, averageSpeed :Double, averagePitch :Double, averageHeartRate :Double ) {
         guard let userID = Auth.auth().currentUser?.uid else {
