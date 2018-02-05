@@ -15,6 +15,7 @@ var pitchArray =  [Double]()
 var totalDistArray = [Double]()
 var pulseArray =  [Double]()
 var currentSpeedArray = [Double]()
+var onTrackForGoalsCounter : Double =  0
 class InProgessWorkoutManager {
     
     
@@ -40,6 +41,7 @@ class InProgessWorkoutManager {
        // print(currentSpeed)
      //   print(speedGoal)
         if (currentSpeed >= speedGoal) {
+            onTrackForGoalsCounter += 1
             return true
         }
         return false

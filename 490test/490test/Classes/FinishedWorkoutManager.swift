@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 // class for post workout analyis chart view will use this class to show results and compare against goals
-class FinishedWorkoutUploader{
+class FinishedWorkoutManager{
     var ref: DatabaseReference!
     
     func getAverageSpeed (speedArray :[Double]) -> Double {
@@ -28,17 +28,23 @@ class FinishedWorkoutUploader{
     }
     
     
-    
-
     func pushFinishedWorkout(distance :Double, averageSpeed :Double, averagePitch :Double, averageHeartRate :Double ) {
+        var workoutPerformance : Double
         guard let userID = Auth.auth().currentUser?.uid else {
             print ("something went wrong")
             return
         }
+        if(debugMode == 1) {
+            var fakeStat : Double = Double(arc4random_uniform(UInt32(totalDistArray.count))) + 1
+             workoutPerformance = fakeStat / Double(totalDistArray.count)
+        } else {
+            workoutPerformance = onTrackForGoalsCounter / Double(totalDistArray.count)
+        }
+        
         ref = Database.database().reference().child("finishedWorkouts").child(userID).childByAutoId()
         let time: String!
         time = getTodayString()
-        let valuesToPush = ["Distance" : distance, "averageSpeed" : averagePitch, "averagePitch" : averagePitch, "averageHeartRate" :averageHeartRate, "dateCompleted" : time] as [String : Any]
+        let valuesToPush = ["Distance" : distance, "averageSpeed" : averagePitch, "averagePitch" : averagePitch, "averageHeartRate" :averageHeartRate, "dateCompleted" : time, "Workout Performance" : workoutPerformance] as [String : Any]
         
         ref.updateChildValues(valuesToPush) { (err, ref) in
             if err != nil {
@@ -50,8 +56,7 @@ class FinishedWorkoutUploader{
 
     }
     
-    
-    
+
     func getTodayString() -> String{
         
         let date = Date()

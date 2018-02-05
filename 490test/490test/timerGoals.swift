@@ -7,17 +7,15 @@
 //
 
 import UIKit
-
+var debugMode = 1; // 1 = debug
 class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()
     let currentWorkout = InProgessWorkoutManager()
     var pitch = 0.0
-    var roll = 0.0
-    var yaw = 0.0
     var speedGoal = 0.0
     var timeGoal = 0
-    var debugMode = 1; // 1 = debug
+    
    
     //Mark--------------DEBUG-------------------------------
      var fakeData = FakeDataGenerator()
@@ -84,7 +82,7 @@ class timerGoals: UIViewController {
     }
     
     @IBAction func stPa(_ sender: Any) {
-        if (!ble.connectedToDevice) {
+        if (!ble.connectedToDevice && debugMode == 0) {
             let alert = UIAlertController(title: "No Connection Error", message: "Please wait for connection", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title:"OK",style: UIAlertActionStyle.default, handler:nil))
             self.present(alert, animated: true, completion: nil)
