@@ -12,6 +12,23 @@ import Firebase
 class WorkoutAnalyzer{
     var ref: DatabaseReference!
     
+    func getAverageSpeed (speedArray :[Double]) -> Double {
+        return (speedArray.reduce(0,+) / Double(speedArray.count))
+    }
+    
+    func getAveragePulse (pulseArray :[Double]) -> Double {
+        return (pulseArray.reduce(0,+) / Double(pulseArray.count))
+    }
+    
+    func getAveragePitch (pitchArray :[Double]) -> Double {
+        var pitch =  (pitchArray.reduce(0,+) / Double(pitchArray.count))
+        // convert to degrees
+        var degrees = pitch * (180/M_PI)
+        return degrees
+    }
+    
+    
+    
 
     func pushFinishedWorkout(distance :Double, averageSpeed :Double, averagePitch :Double, averageHeartRate :Double ) {
         guard let userID = Auth.auth().currentUser?.uid else {

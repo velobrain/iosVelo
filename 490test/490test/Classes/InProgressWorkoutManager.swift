@@ -14,6 +14,7 @@ import Foundation
 var pitchArray =  [Double]()
 var totalDistArray = [Double]()
 var pulseArray =  [Double]()
+var currentSpeedArray = [Double]()
 class InProgessWorkoutManager {
     
     
@@ -34,6 +35,7 @@ class InProgessWorkoutManager {
         // return true or false if they are on track to meet workout goals
         var timeElapsed = totalDistArray.count * 5
         var currentSpeed = Double(totalDistArray.last!) / Double (timeElapsed)
+        currentSpeedArray.append(currentSpeed)
        // print(timeElapsed)
        // print(currentSpeed)
      //   print(speedGoal)
