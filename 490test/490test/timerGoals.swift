@@ -7,41 +7,35 @@
 //
 
 import UIKit
-
+var debugMode = 1; // 1 = debug
 class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()
     let currentWorkout = InProgessWorkoutManager()
     var pitch = 0.0
-    var roll = 0.0
-    var yaw = 0.0
     var speedGoal = 0.0
     var timeGoal = 0
-    var debugMode = 1;
-    var fakeData = FakeDataGenerator()
     
+   
+    //Mark--------------DEBUG-------------------------------
+     var fakeData = FakeDataGenerator()
     var fakeDataTimer: Timer!
-    
-  
-    
     func genFakeData() {
         self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
             self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0) , pulse: self.fakeData.genRandomPulse())
         })
         RunLoop.current.add(self.fakeDataTimer!, forMode: .defaultRunLoopMode)
     }
+    //--------------------------------------------------------
     
     
-//    var inclinationCollection = [Double]()
+
     var sensorTimer: Timer!
     
     func getSensorValues() {
         self.sensorTimer = Timer(fire: Date(), interval: (1.0/5.0), repeats: true, block: { (sensorTimer) in
             self.phoneSensor.startDeviceMotion()
             self.pitch = self.phoneSensor.getPitch()
-            self.roll = self.phoneSensor.getRoll()
-            self.yaw = self.phoneSensor.getYaw()
-//            self.inclinationCollection.append(self.pitch)
         })
         RunLoop.current.add(self.sensorTimer!, forMode: .defaultRunLoopMode)
     }
@@ -79,6 +73,8 @@ class timerGoals: UIViewController {
     
     @IBAction func stopBtn(_ sender: Any) {
         timer.invalidate()
+        fakeDataTimer.invalidate()
+        sensorTimer.invalidate()
         startCountdown = false
         seconds = 0
         minutes = 0
@@ -86,7 +82,7 @@ class timerGoals: UIViewController {
     }
     
     @IBAction func stPa(_ sender: Any) {
-        if (!ble.connectedToDevice) {
+        if (!ble.connectedToDevice && debugMode == 0) {
             let alert = UIAlertController(title: "No Connection Error", message: "Please wait for connection", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title:"OK",style: UIAlertActionStyle.default, handler:nil))
             self.present(alert, animated: true, completion: nil)
