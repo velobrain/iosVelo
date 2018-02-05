@@ -44,7 +44,7 @@ class FinishedWorkoutManager{
         ref = Database.database().reference().child("finishedWorkouts").child(userID).childByAutoId()
         let time: String!
         time = getTodayString()
-        let valuesToPush = ["Distance" : distance, "averageSpeed" : averagePitch, "averagePitch" : averagePitch, "averageHeartRate" :averageHeartRate, "dateCompleted" : time, "Workout Performance" : workoutPerformance] as [String : Any]
+        let valuesToPush = ["Distance" : distance, "averageSpeed" : averageSpeed, "averagePitch" : averagePitch, "averageHeartRate" :averageHeartRate, "dateCompleted" : time, "Workout Performance" : workoutPerformance] as [String : Any]
         
         ref.updateChildValues(valuesToPush) { (err, ref) in
             if err != nil {
