@@ -17,31 +17,27 @@ class timerGoals: UIViewController {
     var yaw = 0.0
     var speedGoal = 0.0
     var timeGoal = 0
-    var debugMode = 1;
-    var fakeData = FakeDataGenerator()
-    
+    var debugMode = 1; // 1 = debug
+   
+    //Mark--------------DEBUG-------------------------------
+     var fakeData = FakeDataGenerator()
     var fakeDataTimer: Timer!
-    
-  
-    
     func genFakeData() {
         self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
             self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0) , pulse: self.fakeData.genRandomPulse())
         })
         RunLoop.current.add(self.fakeDataTimer!, forMode: .defaultRunLoopMode)
     }
+    //--------------------------------------------------------
     
     
-//    var inclinationCollection = [Double]()
+
     var sensorTimer: Timer!
     
     func getSensorValues() {
         self.sensorTimer = Timer(fire: Date(), interval: (1.0/5.0), repeats: true, block: { (sensorTimer) in
             self.phoneSensor.startDeviceMotion()
             self.pitch = self.phoneSensor.getPitch()
-            self.roll = self.phoneSensor.getRoll()
-            self.yaw = self.phoneSensor.getYaw()
-//            self.inclinationCollection.append(self.pitch)
         })
         RunLoop.current.add(self.sensorTimer!, forMode: .defaultRunLoopMode)
     }
@@ -79,6 +75,8 @@ class timerGoals: UIViewController {
     
     @IBAction func stopBtn(_ sender: Any) {
         timer.invalidate()
+        fakeDataTimer.invalidate()
+        sensorTimer.invalidate()
         startCountdown = false
         seconds = 0
         minutes = 0

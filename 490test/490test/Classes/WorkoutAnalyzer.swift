@@ -30,8 +30,7 @@ class WorkoutAnalyzer{
             }
             print("finished workout added to DB")
         }
-        
-    
+
     }
     
     
