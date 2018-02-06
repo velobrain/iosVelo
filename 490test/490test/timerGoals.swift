@@ -50,7 +50,7 @@ class timerGoals: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var speedG: UILabel!
     @IBOutlet weak var heartG: UILabel!
-    @IBOutlet weak var timeG: UILabel!
+    //@IBOutlet weak var timeG: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var stPaLbl: UIButton!
     @IBOutlet weak var stopLbl: UIButton!
@@ -126,9 +126,9 @@ class timerGoals: UIViewController {
         ble = SimpleBluetoothIO(serviceUUID: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E", delegate: self)
         phoneSensor.startDeviceMotion()
         getSensorValues()
-        speedG.text = speedP
-        heartG.text = heartP
-        timeG.text = timeP
+        speedG.text = "Speed Goal: " + speedP
+        heartG.text = "Heart Rate Goal: " + heartP
+        //timeG.text = timeP
         
         minutes = Int(timeP)!
       
