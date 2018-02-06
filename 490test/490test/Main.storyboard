@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uNU-KR-Vbk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5bc-9r-oRs">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1040,6 +1040,32 @@
             </objects>
             <point key="canvasLocation" x="-58.399999999999999" y="3438.9162561576354"/>
         </scene>
+        <!--Splash Controller-->
+        <scene sceneID="utb-bk-KT2">
+            <objects>
+                <viewController id="5bc-9r-oRs" customClass="splashController" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RBX-CH-8YB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-GN-5cv">
+                                <rect key="frame" x="48" y="310" width="279" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="c7S-wN-tWz"/>
+                    </view>
+                    <connections>
+                        <outlet property="gifView" destination="5t2-GN-5cv" id="Yye-Vo-sz2"/>
+                        <segue destination="uNU-KR-Vbk" kind="show" identifier="splashToLogin" id="20L-c1-cEx"/>
+                        <segue destination="q9M-dN-nPU" kind="show" identifier="skipToMenu" id="mke-tF-Cml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emF-GT-UsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1786.4000000000001" y="2812.3152709359606"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bike.png" width="100" height="100"/>
@@ -1050,6 +1076,6 @@
         <image name="icons8-stop-100 (1).png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jEt-f5-dwS"/>
+        <segue reference="mke-tF-Cml"/>
     </inferredMetricsTieBreakers>
 </document>
