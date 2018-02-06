@@ -10,6 +10,7 @@ target '490test' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
 	pod 'Charts'
+	pod 'SwiftGifOrigin', '~> 1.6.1'
     pod 'LinearProgressView'
 
 end

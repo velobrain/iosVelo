@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E4DD95323C54A78F879DAB0F1508B8E7'
-               BlueprintName = 'nanopb'
+               BlueprintIdentifier = 'B0C4AE86B4F4E206CB9365D81ECA94FD'
+               BlueprintName = 'LinearProgressView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'nanopb.framework'>
+               BuildableName = 'LinearProgressView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
