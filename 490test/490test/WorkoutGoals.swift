@@ -12,11 +12,7 @@ import Firebase
 
 class WorkoutGoals: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var placeHolder: UILabel!
     
-    @IBOutlet weak var placeHolder2: UILabel!
-    @IBOutlet weak var placeHolder3: UILabel!
-    @IBOutlet weak var placeHolder4: UILabel!
     
     @IBOutlet weak var speedIn: UITextField!
     
@@ -26,6 +22,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var weightIn: UITextField!
     
+    @IBOutlet weak var submitButtonLbl: UIButton!
     @IBAction func backBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -41,12 +38,7 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        placeHolder.text = speedIn.text
-        placeHolder2.text = heartIn.text
-        placeHolder3.text = timeIn.text
-        placeHolder4.text = weightIn.text
-    }
+
     
     //removes the keyboard by tapping anywhere on screen
     func removeKB() {
@@ -132,9 +124,27 @@ class WorkoutGoals: UIViewController, UITextFieldDelegate {
     }
     
    
+    func curvedCorners(){
+        speedIn.borderStyle = .none
+        speedIn.layer.cornerRadius = 35.0
+        speedIn.clipsToBounds = true
+        heartIn.borderStyle = .none
+        heartIn.layer.cornerRadius = 35.0
+        heartIn.clipsToBounds = true
+        timeIn.borderStyle = .none
+        timeIn.layer.cornerRadius = 35.0
+        timeIn.clipsToBounds = true
+        weightIn.borderStyle = .none
+        weightIn.layer.cornerRadius = 35.0
+        weightIn.clipsToBounds = true
+        submitButtonLbl.layer.cornerRadius = 20
+        submitButtonLbl.clipsToBounds = true
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        curvedCorners()
         speedIn.delegate = self
         heartIn.delegate = self
         timeIn.delegate = self
