@@ -16,6 +16,8 @@ var totalDistArray = [Double]()
 var pulseArray =  [Double]()
 var currentSpeedArray = [Double]()
 var onTrackForGoalsCounter : Double =  0
+var currentAveragePulse : Double = 0
+var currentAverageSpeed : Double = 0
 class InProgessWorkoutManager {
     
     
@@ -25,11 +27,13 @@ class InProgessWorkoutManager {
         pulseArray = []
     }
     
-    func newEntry(pitch: Double, dist: Double, pulse: Double) {
+    func newEntryPulse(pulse: Double) {
+        pulseArray.append(pulse)
+    }
+    
+    func newEntry(pitch: Double, dist: Double) {
         pitchArray.append(pitch)
         totalDistArray.append(dist)
-        pulseArray.append(pulse)
-//      print(self.pitchArray)
     }
     
     func onTrackForGoals(speedGoal: Double, timeGoal: Int) -> Bool {
@@ -46,6 +50,19 @@ class InProgessWorkoutManager {
         }
         return false
     }
+    
+func onTrackForGoalsPulse(pulseGoal: Double) -> Bool {
+      var timeElapsed = totalDistArray.count * 5
+    var averageHeartRate = pulseArray.last! / Double (timeElapsed)
+    averageHeartRate *= 60 // times 60 to make it in bpm
+    currentAveragePulse = averageHeartRate
+    if (averageHeartRate >= pulseGoal) {
+        return true
+    } else {
+        return false
+    }
+    
+}
     
     func getBackOnTrack() -> String {
         // return instructions for what the cyclist needs to do to get back on

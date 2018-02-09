@@ -14,21 +14,23 @@ class timerGoals: UIViewController {
     let currentWorkout = InProgessWorkoutManager()
     var pitch = 0.0
     var speedGoal = 0.0
+    var pulseGoal = 0.0
     var timeGoal = 0
     
    
     //Mark--------------DEBUG-------------------------------
+    
      var fakeData = FakeDataGenerator()
     var fakeDataTimer: Timer!
     func genFakeData() {
         self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
-            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0) , pulse: self.fakeData.genRandomPulse())
+            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0))
         })
         RunLoop.current.add(self.fakeDataTimer!, forMode: .defaultRunLoopMode)
     }
     //--------------------------------------------------------
     
-    
+ 
 
     var sensorTimer: Timer!
     
@@ -127,6 +129,7 @@ class timerGoals: UIViewController {
         super.viewDidLoad()
         bleConnectionStatusLbl.text = "Bluetooth Connection Status: Not Connected"
         self.speedGoal = Double(speedP)! / 60
+        self.pulseGoal = Double(heartP)!
         self.timeGoal = Int(timeP)!
         ble = SimpleBluetoothIO(serviceUUID: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E", delegate: self)
         phoneSensor.startDeviceMotion()
@@ -176,18 +179,51 @@ class timerGoals: UIViewController {
 
 extension timerGoals: SimpleBluetoothIODelegate {
         func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
-            print(value)
+    
+            if(value  > 0 ) {
+              self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value))
+                print("total distance")
+                print(totalDistArray)
+            } else {
+                self.currentWorkout.newEntryPulse(pulse: Double(-value))
+                print("pulse array")
+                print(pulseArray)
+            }
             
-            self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value), pulse: Double(value))
-            if (self.currentWorkout.onTrackForGoals(speedGoal: Double(speedGoal), timeGoal: timeGoal)) {
-                speech.talkCustom(phrase: "You are on track for your goals")
-            }
-            else {
-                speech.talkCustom(phrase: "You are not on track for your goals")
-            }
+            if(totalDistArray.count % 2 != 0 && value > 0) {
+               
+                if (self.currentWorkout.onTrackForGoals(speedGoal: Double(speedGoal), timeGoal: timeGoal)) {
+                    
+                    speech.talkCustom(phrase: "You are on track for your speed goals your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
+                } else {
+                    speech.talkCustom(phrase: "You are not on track for your speed goals. your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
+                }
                 
+            } else if (totalDistArray.count % 2 == 0 && value > 0) {
+                
+               
+                if (self.currentWorkout.onTrackForGoalsPulse(pulseGoal: pulseGoal)) {
+                    speech.talkCustom(phrase: "You are on track for your pulse goals. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2))")
+                } else {
+                    speech.talkCustom(phrase: "Try harder Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2)) ")
+                }
+            }
+           
+            
         }
+           
 }
+
+extension Double {
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
+
+
 
 
 
