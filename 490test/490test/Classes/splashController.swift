@@ -29,12 +29,13 @@ class splashController: UIViewController {
         gifView.loadGif(name: "ring")
         
         
+        
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
-                self.perform(#selector(self.skipToMenuAlreadyLoggedIn), with: nil, afterDelay: 4)
+                self.perform(#selector(self.skipToMenuAlreadyLoggedIn), with: nil, afterDelay: 3)
             } else {
-                self.perform(#selector(self.jumpToNextViewAfterLoad), with: nil, afterDelay: 4)
+                self.perform(#selector(self.jumpToNextViewAfterLoad), with: nil, afterDelay: 3)
             }
         }
     }
