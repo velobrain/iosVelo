@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var debugMode = 1; // 1 = debug
+var debugMode = 0; // 1 = debug
 class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()
@@ -66,14 +66,19 @@ class timerGoals: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         disconnectFromBluetooth()
         dismiss(animated: true, completion: nil)
-        fakeDataTimer.invalidate()
+        if(debugMode == 1) {
+            fakeDataTimer.invalidate()
+        }
         sensorTimer.invalidate()
     }
     
     
     @IBAction func stopBtn(_ sender: Any) {
         timer.invalidate()
-        fakeDataTimer.invalidate()
+        if(debugMode == 1 ){
+             fakeDataTimer.invalidate()
+        }
+       
         sensorTimer.invalidate()
         startCountdown = false
         seconds = 0
