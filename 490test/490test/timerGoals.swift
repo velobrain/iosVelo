@@ -191,11 +191,13 @@ class timerGoals: UIViewController {
                 speech.talkCustom(phrase: "You are not on track for your speed goals. your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
             }
         case "distance":
-            speech.talkCustom(phrase: "Your total distance is \(Double(totalDistArray.last!).rounded(toPlaces: 2)) kilometres")
+            speech.talkCustom(phrase: "Your total distance is \(Double(totalDistArray.last!).rounded(toPlaces: 2)) metres")
         case "pitch":
             speech.talkCustom(phrase: "Your pitch is \(Double(pitchArray.last!).rounded(toPlaces: 2))")
         case "calories":
-            speech.talkCustom(phrase: "you have burned 0 calories")
+            // 5.5 is the MET value for active bicycling
+            let calories = ( ( 0.0175 * 5.5 * (Double(weight))! ) / 60 ) * Double( totalDistArray.count * 5 )
+            speech.talkCustom(phrase: "You have burned \(calories.rounded(toPlaces: 2)) calories")
         case "time":
             speech.talkCustom(phrase: "You have been cycling for \(Double(totalDistArray.count)*5) seconds")
         default:
