@@ -186,12 +186,12 @@ class timerGoals: UIViewController {
         case "speed":
             if (self.currentWorkout.onTrackForGoals(speedGoal: Double(speedGoal), timeGoal: timeGoal)) {
                 
-                speech.talkCustom(phrase: "You are on track for your speed goals your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
+                speech.talkCustom(phrase: "You are on track for your speed goals your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) kilometres per hour")
             } else {
-                speech.talkCustom(phrase: "You are not on track for your speed goals. your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
+                speech.talkCustom(phrase: "You are not on track for your speed goals. your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) kilometres per hour")
             }
         case "distance":
-            speech.talkCustom(phrase: "Your total distance is \(Double(totalDistArray.last!).rounded(toPlaces: 2)) metres")
+            speech.talkCustom(phrase: "Your total distance is \(Double(totalDistArray.last!)/1000.rounded(toPlaces: 2)) kilometres")
         case "pitch":
             speech.talkCustom(phrase: "Your pitch is \(Double(pitchArray.last!).rounded(toPlaces: 2))")
         case "calories":
