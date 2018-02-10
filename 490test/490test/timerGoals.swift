@@ -197,7 +197,7 @@ class timerGoals: UIViewController {
         case "calories":
             speech.talkCustom(phrase: "you have burned 0 calories")
         case "time":
-            speech.talkCustom(phrase: "You have been cycling for \(Double(totalDistArray.count)) seconds")
+            speech.talkCustom(phrase: "You have been cycling for \(Double(totalDistArray.count)*5) seconds")
         default:
             //do nothing
             print("")
@@ -216,6 +216,7 @@ extension timerGoals: SimpleBluetoothIODelegate {
                 print("total distance")
                 print(totalDistArray)
                 topicIndex += 1
+                if (topicIndex == 5) { topicIndex = 0}
             } else {
                 self.currentWorkout.newEntryPulse(pulse: Double(-value))
                 print("pulse array")
@@ -224,22 +225,8 @@ extension timerGoals: SimpleBluetoothIODelegate {
             
             // happens every 10 seconds and only on positive bluetooth values
             if(totalDistArray.count % 2 == 0 && value > 0) {
-               
                 saySomething(topic: topics[topicIndex])
-                
             }
-                /*
-            else if (totalDistArray.count % 2 == 0 && value > 0) {
-                
-               
-                if (self.currentWorkout.onTrackForGoalsPulse(pulseGoal: pulseGoal)) {
-                    speech.talkCustom(phrase: "You are on track for your pulse goals. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2))")
-                } else {
-                    speech.talkCustom(phrase: "Try harder. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2)) ")
-                }
-            }
- */
-           
             
         }
            
