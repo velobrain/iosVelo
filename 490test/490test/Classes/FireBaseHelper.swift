@@ -8,11 +8,13 @@
 // Utility class for getting userID and reading/writing data to Firebase.
 import Foundation
 import Firebase
+
+var name:String = ""
+var height:String = ""
+var weight:String = ""
 class FireBaseHelper {
     var ref: DatabaseReference!
-    var name:String = ""
-    var height:String = ""
-    var weight:String = ""
+    
     
     
     
@@ -33,7 +35,7 @@ class FireBaseHelper {
         ref = Database.database().reference()
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-            self.name = value?["name"] as? String ?? ""
+            name = value?["name"] as? String ?? ""
         })
     }
     
@@ -47,7 +49,7 @@ class FireBaseHelper {
         ref = Database.database().reference()
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-            self.height = value?["height"] as? String ?? ""
+            height = value?["height"] as? String ?? ""
         })
     }
     
@@ -61,7 +63,7 @@ class FireBaseHelper {
         ref = Database.database().reference()
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-            self.weight = value?["weight"] as? String ?? ""
+            weight = value?["weight"] as? String ?? ""
         })
     }
     
