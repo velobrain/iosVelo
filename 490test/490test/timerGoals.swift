@@ -16,6 +16,8 @@ class timerGoals: UIViewController {
     var speedGoal = 0.0
     var pulseGoal = 0.0
     var timeGoal = 0
+    let topics = ["pulse", "speed", "distance", "pitch", "calories", "time"]
+    var topicIndex = 0
     
    
     //Mark--------------DEBUG-------------------------------
@@ -172,6 +174,35 @@ class timerGoals: UIViewController {
             print("error disconnecting - no device was connected")
         }
     }
+    
+    func saySomething(topic: String) {
+        switch topic {
+        case "pulse":
+            if (self.currentWorkout.onTrackForGoalsPulse(pulseGoal: pulseGoal)) {
+                speech.talkCustom(phrase: "You are on track for your pulse goals. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2))")
+            } else {
+                speech.talkCustom(phrase: "Try harder. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2)) ")
+            }
+        case "speed":
+            if (self.currentWorkout.onTrackForGoals(speedGoal: Double(speedGoal), timeGoal: timeGoal)) {
+                
+                speech.talkCustom(phrase: "You are on track for your speed goals your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
+            } else {
+                speech.talkCustom(phrase: "You are not on track for your speed goals. your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
+            }
+        case "distance":
+            speech.talkCustom(phrase: "Your total distance is \(Double(totalDistArray.last!).rounded(toPlaces: 2)) kilometres")
+        case "pitch":
+            speech.talkCustom(phrase: "Your pitch is \(Double(pitchArray.last!).rounded(toPlaces: 2))")
+        case "calories":
+            speech.talkCustom(phrase: "you have burned 0 calories")
+        case "time":
+            speech.talkCustom(phrase: "You have been cycling for \(Double(totalDistArray.count)) seconds")
+        default:
+            //do nothing
+            print("")
+        }
+    }
    
 }// end class
 
@@ -184,30 +215,30 @@ extension timerGoals: SimpleBluetoothIODelegate {
               self.currentWorkout.newEntry(pitch: self.pitch, dist: Double(value))
                 print("total distance")
                 print(totalDistArray)
+                topicIndex += 1
             } else {
                 self.currentWorkout.newEntryPulse(pulse: Double(-value))
                 print("pulse array")
                 print(pulseArray)
             }
             
-            if(totalDistArray.count % 2 != 0 && value > 0) {
+            // happens every 10 seconds and only on positive bluetooth values
+            if(totalDistArray.count % 2 == 0 && value > 0) {
                
-                if (self.currentWorkout.onTrackForGoals(speedGoal: Double(speedGoal), timeGoal: timeGoal)) {
-                    
-                    speech.talkCustom(phrase: "You are on track for your speed goals your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
-                } else {
-                    speech.talkCustom(phrase: "You are not on track for your speed goals. your speed is \(Double(currentSpeedArray.last! * 60).rounded(toPlaces: 2)) ")
-                }
+                saySomething(topic: topics[topicIndex])
                 
-            } else if (totalDistArray.count % 2 == 0 && value > 0) {
+            }
+                /*
+            else if (totalDistArray.count % 2 == 0 && value > 0) {
                 
                
                 if (self.currentWorkout.onTrackForGoalsPulse(pulseGoal: pulseGoal)) {
                     speech.talkCustom(phrase: "You are on track for your pulse goals. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2))")
                 } else {
-                    speech.talkCustom(phrase: "Try harder Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2)) ")
+                    speech.talkCustom(phrase: "Try harder. Pulse is \(Double(currentAveragePulse).rounded(toPlaces: 2)) ")
                 }
             }
+ */
            
             
         }
