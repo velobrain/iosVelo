@@ -15,6 +15,7 @@
 		76290419202043670091E390 /* FakeDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76290418202043670091E390 /* FakeDataGenerator.swift */; };
 		763B6E03202A1FB9000A79BF /* source.gif in Resources */ = {isa = PBXBuildFile; fileRef = 763B6E02202A1FB9000A79BF /* source.gif */; };
 		763B6E05202A207F000A79BF /* lol.gif in Resources */ = {isa = PBXBuildFile; fileRef = 763B6E04202A207F000A79BF /* lol.gif */; };
+		763B6E0D2030D59D000A79BF /* WorkoutCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763B6E0C2030D59D000A79BF /* WorkoutCharts.swift */; };
 		763DB7441FD3A7F100638C04 /* FireBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DB7431FD3A7F100638C04 /* FireBaseHelper.swift */; };
 		763DB7461FD3C75C00638C04 /* InProgressWorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763DB7451FD3C75C00638C04 /* InProgressWorkoutManager.swift */; };
 		7648AD321FC540820045DCA7 /* workoutTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7648AD311FC540820045DCA7 /* workoutTable.swift */; };
@@ -55,6 +56,19 @@
 		D9DCAB17202957FD005C05C8 /* icons8-stop-100 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D9DCAB16202957FB005C05C8 /* icons8-stop-100 (1).png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		76C983A82030D9BF00593C99 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		454851B115E1234C7F81EF66 /* Pods_490test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_490test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62625FD088226CA3CC29B0EE /* Pods-490test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-490test.release.xcconfig"; path = "Pods/Target Support Files/Pods-490test/Pods-490test.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +80,8 @@
 		76290418202043670091E390 /* FakeDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataGenerator.swift; sourceTree = "<group>"; };
 		763B6E02202A1FB9000A79BF /* source.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = source.gif; sourceTree = "<group>"; };
 		763B6E04202A207F000A79BF /* lol.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lol.gif; sourceTree = "<group>"; };
+		763B6E072030D4A1000A79BF /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		763B6E0C2030D59D000A79BF /* WorkoutCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCharts.swift; sourceTree = "<group>"; };
 		763DB7431FD3A7F100638C04 /* FireBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseHelper.swift; sourceTree = "<group>"; };
 		763DB7451FD3C75C00638C04 /* InProgressWorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgressWorkoutManager.swift; sourceTree = "<group>"; };
 		7648AD311FC540820045DCA7 /* workoutTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutTable.swift; sourceTree = "<group>"; };
@@ -123,6 +139,7 @@
 		4FBBA7E648675D9BB63216D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				763B6E072030D4A1000A79BF /* Charts.framework */,
 				454851B115E1234C7F81EF66 /* Pods_490test.framework */,
 			);
 			name = Frameworks;
@@ -219,6 +236,7 @@
 				768EF1FD1FC8C1A30077D25F /* Classes */,
 				D9B23B751FA6A8AA00BF1005 /* timerGoals.swift */,
 				765E7D8A1FBE69F700B3FA02 /* Main.storyboard */,
+				763B6E0C2030D59D000A79BF /* WorkoutCharts.swift */,
 				7648AD311FC540820045DCA7 /* workoutTable.swift */,
 				7648AD331FC5DDB20045DCA7 /* WorkoutDetails.swift */,
 				D9B23B661FA67E8700BF1005 /* Assets.xcassets */,
@@ -253,6 +271,7 @@
 				D9B23B571FA67E8700BF1005 /* Resources */,
 				98CD395B27507C3418D262FE /* [CP] Embed Pods Frameworks */,
 				7458E6FE1AFE888F6B277846 /* [CP] Copy Pods Resources */,
+				76C983A82030D9BF00593C99 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,6 +442,7 @@
 				D9A443E61FB915AB00B6A62F /* signupVC.swift in Sources */,
 				D9B23B741FA6896100BF1005 /* WorkoutGoals.swift in Sources */,
 				D9C310161FB90887004638FE /* loginVC.swift in Sources */,
+				763B6E0D2030D59D000A79BF /* WorkoutCharts.swift in Sources */,
 				76D4B98E200A9D7400539DC9 /* TextToSpeech.swift in Sources */,
 				D9B23B5D1FA67E8700BF1005 /* AppDelegate.swift in Sources */,
 				765E7D8F1FBE8C4B00B3FA02 /* UUIDKey.swift in Sources */,

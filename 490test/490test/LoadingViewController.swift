@@ -24,9 +24,10 @@ class LoadingViewController: UIViewController {
     @IBOutlet weak var userHelpLabel: UILabel!
     var progressTimer = Timer()
     @objc func progress() {
-        loadingBar.progress += 0.002
+        loadingBar.progress += 0.05
         if(loadingBar.progress == 1) {
             userHelpLabel.text = "Done"
+            self.performSegue(withIdentifier: "showCharts", sender: self)
         }
     }
     

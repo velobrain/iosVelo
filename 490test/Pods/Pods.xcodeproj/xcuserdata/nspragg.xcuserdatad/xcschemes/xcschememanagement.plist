@@ -27,6 +27,8 @@
 		</dict>
 		<key>LinearProgressView.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
@@ -39,6 +41,8 @@
 		</dict>
 		<key>SwiftGifOrigin.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>

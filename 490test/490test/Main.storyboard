@@ -517,11 +517,37 @@
                     <connections>
                         <outlet property="loadingBar" destination="onJ-Dg-HEM" id="phn-Mf-hH0"/>
                         <outlet property="userHelpLabel" destination="lNd-AJ-5C6" id="css-NK-qUj"/>
+                        <segue destination="LBT-yf-Jhb" kind="show" identifier="showCharts" id="fWr-hb-tVD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMc-ND-EXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2591" y="71"/>
+        </scene>
+        <!--Workout Goals Chart-->
+        <scene sceneID="dTr-3Y-Ib3">
+            <objects>
+                <viewController id="LBT-yf-Jhb" customClass="WorkoutGoalsChart" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zlU-vW-fnt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gi-I6-arB" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="124" width="343" height="654"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="C6Y-Ef-kAG"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="6Gi-I6-arB" id="U2E-eZ-Iyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Xm-kN-LxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3216" y="50"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="7ut-tc-zMR">
