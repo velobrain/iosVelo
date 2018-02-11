@@ -533,9 +533,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gi-I6-arB" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="124" width="343" height="654"/>
+                                <rect key="frame" x="16" y="76" width="343" height="332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-Ij-UPA" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="447" width="343" height="331"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -543,11 +548,12 @@
                     </view>
                     <connections>
                         <outlet property="chartView" destination="6Gi-I6-arB" id="U2E-eZ-Iyc"/>
+                        <outlet property="pulseChartView" destination="Zqa-Ij-UPA" id="KMN-fR-IK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xm-kN-LxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="50"/>
+            <point key="canvasLocation" x="3215.1999999999998" y="49.50738916256158"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="7ut-tc-zMR">

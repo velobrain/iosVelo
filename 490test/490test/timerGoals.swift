@@ -82,7 +82,7 @@ class timerGoals: UIViewController {
         if(debugMode == 1 ){
              fakeDataTimer.invalidate()
         }
-       
+        
         sensorTimer.invalidate()
         startCountdown = false
         seconds = 0
