@@ -12,8 +12,7 @@ import AVFoundation
 
 class MainMenu: UIViewController {
     
-    var greeter = FireBaseHelper()
-   
+    
     @IBOutlet weak var leftTopBox: UILabel!
     @IBOutlet weak var leftBottomBox: UILabel!
     @IBOutlet weak var rightTopBox: UILabel!
@@ -22,7 +21,10 @@ class MainMenu: UIViewController {
     @IBOutlet weak var startWorkoutButtonLbl: UIButton!
     @IBOutlet weak var proffileButtonLbl: UIButton!
     
-    
+    @IBOutlet weak var homeScreenDistanceLabel: UILabel!
+    @IBOutlet weak var homeScreenSpeedLabel: UILabel!
+    @IBOutlet weak var homeScreenPulseLabel: UILabel!
+    @IBOutlet weak var homeScreenPitchLabel: UILabel!
     
     
     @IBAction func settingsButton(_ sender: Any) {
@@ -35,16 +37,17 @@ class MainMenu: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        greetLabel.text = name
+        homeScreenDistanceLabel.text = ("\(String(homeScreenDistance)) KM")
+        homeScreenSpeedLabel.text = ("\(String(homeScreenSpeed)) km/h")
+        homeScreenPulseLabel.text = ("\(String(homeScreenPulse)) bpm")
+        homeScreenPitchLabel.text = ("\(String(homeScreenPitch)) °")
         bordersForBoxes()
         
        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let name = greeter.getUserName()
-         greetLabel.text = name
-        
-    }
+   
     
     @IBAction func gotoLoginOrSignupButton(_ sender: Any) {
         performSegue(withIdentifier: "goToNewLoginPage", sender: self)

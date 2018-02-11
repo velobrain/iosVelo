@@ -12,16 +12,21 @@ import Firebase
 var name:String = ""
 var height:String = ""
 var weight:String = ""
+var homeScreenDistance:Double = 0
+var homeScreenPulse:Double = 0
+var homeScreenSpeed:Double = 0
+var homeScreenPitch:Double = 0
 class FireBaseHelper {
     var ref: DatabaseReference!
-    
-    
-    
     
     init() {
         userNameAsync()
         userHeightAysnc()
         userWeightAsync()
+        homeScreenDistanceAsync()
+        homeScreenPulseAsync()
+        homeScreenPitchAsync()
+        homeScreenSpeedAsync()
     }
    
     //returns the current user's ID
@@ -39,7 +44,47 @@ class FireBaseHelper {
         })
     }
     
+    func homeScreenDistanceAsync() {
+        let uid = getCurrentUserID()
+        ref = Database.database().reference()
+        ref.child("finishedWorkouts").child(uid!).queryLimited(toLast: 1).observe(.childAdded) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+             homeScreenDistance = value?["Distance"] as? Double ?? 0
+        }
+    }
     
+    func homeScreenPulseAsync() {
+        let uid = getCurrentUserID()
+        ref = Database.database().reference()
+        ref.child("finishedWorkouts").child(uid!).queryLimited(toLast: 1).observe(.childAdded) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            homeScreenPulse = value?["averageHeartRate"] as? Double ?? 0
+        }
+    }
+    
+    func homeScreenPitchAsync() {
+        let uid = getCurrentUserID()
+        ref = Database.database().reference()
+        ref.child("finishedWorkouts").child(uid!).queryLimited(toLast: 1).observe(.childAdded) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            homeScreenPitch = value?["averagePitch"] as? Double ?? 0
+            homeScreenPitch = homeScreenPitch.rounded(toPlaces: 2)
+        }
+    }
+    
+    func homeScreenSpeedAsync() {
+        let uid = getCurrentUserID()
+        ref = Database.database().reference()
+        ref.child("finishedWorkouts").child(uid!).queryLimited(toLast: 1).observe(.childAdded) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            homeScreenSpeed = value?["averageSpeed"] as? Double ?? 0
+            homeScreenSpeed = homeScreenSpeed.rounded(toPlaces: 2)
+           
+        }
+    }
+    
+    
+
     func getUserName() -> String {
         return name
     }
@@ -72,3 +117,5 @@ class FireBaseHelper {
     }
     
 }
+
+
