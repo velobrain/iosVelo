@@ -41,9 +41,6 @@ class InProgessWorkoutManager {
         var timeElapsed = Double(totalDistArray.count) * 5
         var currentSpeed = Double(totalDistArray.last!) / Double (timeElapsed)
         currentSpeedArray.append(currentSpeed)
-       // print(timeElapsed)
-       // print(currentSpeed)
-     //   print(speedGoal)
         if (currentSpeed >= speedGoal) {
             onTrackForGoalsCounter += 1
             return true

@@ -39,11 +39,7 @@ class FinishedWorkoutManager{
             return
         }
         
-        print(distance)
-        print(averageSpeed)
-        print(averagePitch)
-        print(averageHeartRate)
-        print(workoutPerformance)
+       
         workoutPerformance = onTrackForGoalsCounter / Double(totalDistArray.count)
         ref = Database.database().reference().child("finishedWorkouts").child(userID).childByAutoId()
         let time: String!

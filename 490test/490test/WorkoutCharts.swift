@@ -24,7 +24,7 @@ class WorkoutGoalsChart : UIViewController {
         
         var lineChartEntryDistance = [ChartDataEntry]()
         for i in 0..<totalDistArray.count  {
-            let currentSpeedValue = ChartDataEntry(x: Double(i * 5), y: currentSpeedArray[i])
+            let currentSpeedValue = ChartDataEntry(x: Double(i * 5), y: totalDistArray[i]/Double((i+1)*5))
             lineChartEntryDistance.append(currentSpeedValue)
         }
         let currentSpeedLine = LineChartDataSet(values: lineChartEntryDistance, label: "Speed")
@@ -44,7 +44,7 @@ class WorkoutGoalsChart : UIViewController {
         
         var lineChartEntryPulse = [ChartDataEntry]()
         for i in 0..<pulseArray.count  {
-            let pulseValue = ChartDataEntry(x: Double(i * 5), y: pulseArray[i] / Double((i + 1) * 5))
+            let pulseValue = ChartDataEntry(x: Double(i * 5), y: 60*pulseArray[i] / Double((i + 1) * 5))
             lineChartEntryPulse.append(pulseValue)
         }
         let pulseLine = LineChartDataSet(values: lineChartEntryPulse, label: "Pulse")

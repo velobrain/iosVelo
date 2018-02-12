@@ -25,7 +25,7 @@ class timerGoals: UIViewController {
      var fakeData = FakeDataGenerator()
     var fakeDataTimer: Timer!
     func genFakeData() {
-        self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
+        self.fakeDataTimer = Timer(fire: Date(), interval: (0.33), repeats: true, block: { (fakeDataTimer) in
             self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0)) // pitch and distance
             self.currentWorkout.newEntryPulse(pulse: self.fakeData.genRandomPulse()) // pulse
             
@@ -166,6 +166,8 @@ class timerGoals: UIViewController {
     }
     
     func goToLoadingScreen() {
+        self.speech.talkCustom(phrase:" workout complete. check your stats")
+        disconnectFromBluetooth()
         self.performSegue(withIdentifier: "goToLoadingScreen", sender: self)
     }
     
