@@ -20,14 +20,14 @@ class WorkoutGoalsChart : UIViewController {
    
     @IBOutlet weak var pulseChartView: LineChartView!
     
-    func showDistanceChart() {
+    func showSpeedChart() {
         
         var lineChartEntryDistance = [ChartDataEntry]()
         for i in 0..<totalDistArray.count  {
-            let distanceValue = ChartDataEntry(x: Double(i * 5), y: totalDistArray[i])
+            let distanceValue = ChartDataEntry(x: Double(i * 5), y: currentSpeedArray[i])
             lineChartEntryDistance.append(distanceValue)
         }
-        let distanceLine = LineChartDataSet(values: lineChartEntryDistance, label: "Distance")
+        let distanceLine = LineChartDataSet(values: lineChartEntryDistance, label: "Speed")
         distanceLine.colors = [NSUIColor.blue]
         distanceLine.circleRadius = 1
     
@@ -36,18 +36,17 @@ class WorkoutGoalsChart : UIViewController {
         data.addDataSet(distanceLine)
         chartView.data = data
         chartView.chartDescription?.text = "Distance Chart"
-        
     }
     
     
     func showPulseChart() {
         
-        var lineChartEntryDistance = [ChartDataEntry]()
+        var lineChartEntryPulse = [ChartDataEntry]()
         for i in 0..<pulseArray.count  {
-            let pulseValue = ChartDataEntry(x: Double(i * 5), y: pulseArray[i] / Double((i * 5)))
-            lineChartEntryDistance.append(pulseValue)
+            let pulseValue = ChartDataEntry(x: Double(i * 5), y: pulseArray[i] / Double((i + 1) * 5))
+            lineChartEntryPulse.append(pulseValue)
         }
-        let pulseLine = LineChartDataSet(values: lineChartEntryDistance, label: "Pulse")
+        let pulseLine = LineChartDataSet(values: lineChartEntryPulse, label: "Pulse")
         pulseLine.colors = [NSUIColor.red]
         let data = LineChartData()
         data.addDataSet(pulseLine)
@@ -57,7 +56,7 @@ class WorkoutGoalsChart : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showDistanceChart()
-        //showPulseChart()
+        showSpeedChart()
+        showPulseChart()
     }
 }

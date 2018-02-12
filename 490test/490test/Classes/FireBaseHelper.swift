@@ -59,6 +59,7 @@ class FireBaseHelper {
         ref.child("finishedWorkouts").child(uid!).queryLimited(toLast: 1).observe(.childAdded) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             homeScreenPulse = value?["averageHeartRate"] as? Double ?? 0
+            homeScreenPulse = homeScreenPulse.rounded(toPlaces: 2)
         }
     }
     
