@@ -444,13 +444,6 @@
                                     <action selector="backBtn:" destination="pxH-wl-x0p" eventType="touchUpInside" id="RxV-Li-g5F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bluetooth Connection Status: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3t-i8-mWq">
-                                <rect key="frame" x="14" y="239" width="347" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRF-sL-mMV">
                                 <rect key="frame" x="101" y="55" width="173" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -478,7 +471,6 @@
                         <viewLayoutGuide key="safeArea" id="lFt-Dx-Dov"/>
                     </view>
                     <connections>
-                        <outlet property="bleConnectionStatusLbl" destination="q3t-i8-mWq" id="ubu-GB-UIW"/>
                         <outlet property="heartG" destination="fqo-3u-iZN" id="5Zp-Jr-pV3"/>
                         <outlet property="speedG" destination="2mc-0Y-fkp" id="PBk-F4-wvH"/>
                         <outlet property="stPaLbl" destination="U9B-s4-gfi" id="TI8-rR-RYx"/>
@@ -591,14 +583,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLp-wt-NbY">
-                                <rect key="frame" x="60" y="391" width="254" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logout:" destination="lav-VB-8fF" eventType="touchUpInside" id="jLA-zp-x2c"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiH-kF-00V">
                                 <rect key="frame" x="16" y="44" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -615,11 +599,25 @@
                                     <action selector="workoutListBtn:" destination="lav-VB-8fF" eventType="touchUpInside" id="xLC-8Z-aEC"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQB-O3-h7F" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="32" y="368" width="313" height="272"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLp-wt-NbY">
+                                <rect key="frame" x="61" y="696" width="254" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logout:" destination="lav-VB-8fF" eventType="touchUpInside" id="jLA-zp-x2c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="F2k-5R-rtf"/>
                     </view>
                     <connections>
+                        <outlet property="OverallWorkoutStatsChartView" destination="YQB-O3-h7F" id="iz7-k5-mb8"/>
                         <outlet property="loggedIn" destination="Oij-YK-cKc" id="dKe-BZ-uM6"/>
                         <outlet property="userHeightLbl" destination="2pA-KD-EHt" id="r4i-2S-VlH"/>
                         <outlet property="userNameLbl" destination="053-8a-hMd" id="Zer-Sy-Wio"/>

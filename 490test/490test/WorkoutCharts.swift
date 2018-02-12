@@ -35,6 +35,7 @@ class WorkoutGoalsChart : UIViewController {
     
         data.addDataSet(currentSpeedLine)
         chartView.data = data
+        chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         chartView.chartDescription?.text = "Distance Chart"
     }
     
@@ -48,9 +49,11 @@ class WorkoutGoalsChart : UIViewController {
         }
         let pulseLine = LineChartDataSet(values: lineChartEntryPulse, label: "Pulse")
         pulseLine.colors = [NSUIColor.red]
+        pulseLine.circleRadius = 1
         let data = LineChartData()
         data.addDataSet(pulseLine)
         pulseChartView.data = data
+        pulseChartView.animate(xAxisDuration: 2, yAxisDuration: 2)
         pulseChartView.chartDescription?.text = "Pulse Chart"
     }
     

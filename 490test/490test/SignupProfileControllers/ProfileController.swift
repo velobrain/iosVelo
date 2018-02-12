@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 import Firebase
+import Charts
 var loadCount = 0
 class ProfileController: UIViewController {
 
+    @IBOutlet weak var OverallWorkoutStatsChartView: LineChartView!
     @IBAction func workoutListBtn(_ sender: Any) {
         performSegue(withIdentifier: "goToWorkoutList", sender: self)
     }
@@ -22,8 +24,28 @@ class ProfileController: UIViewController {
     var ref: DatabaseReference!
     let user = Auth.auth().currentUser
     
+    func showChart() {
+        var lineChartEntry = [ChartDataEntry]()
+        for i in 0..<overallAverageSpeedList.count  {
+            let value = ChartDataEntry(x: Double(i), y: overallAverageSpeedList[i])
+            lineChartEntry.append(value)
+        }
+        
+        let line = LineChartDataSet(values: lineChartEntry, label: "Average Speed")
+        line.colors = [NSUIColor.blue]
+        line.circleRadius = 1
+    
+        
+        let data = LineChartData()
+        data.addDataSet(line)
+        OverallWorkoutStatsChartView.data = data
+        OverallWorkoutStatsChartView.animate(xAxisDuration: 2, yAxisDuration: 3)
+        OverallWorkoutStatsChartView.chartDescription?.text = "Average Speeds History"
+    }
+    
     override func viewDidLoad() {
         isLoggedIn()
+        showChart()
         super.viewDidLoad()
     }
     

@@ -16,6 +16,11 @@ var homeScreenDistance:Double = 0
 var homeScreenPulse:Double = 0
 var homeScreenSpeed:Double = 0
 var homeScreenPitch:Double = 0
+
+//Profile chart vars
+var overallAverageSpeedList = [Double]()
+var overallAveragePulseList = [Double]()
+var overallWorkoutPerformanceList = [Double]()
 class FireBaseHelper {
     var ref: DatabaseReference!
     
@@ -27,6 +32,7 @@ class FireBaseHelper {
         homeScreenPulseAsync()
         homeScreenPitchAsync()
         homeScreenSpeedAsync()
+        loadFinishedWorkouts()
     }
    
     //returns the current user's ID
@@ -115,6 +121,25 @@ class FireBaseHelper {
     
     func getUserWeight() -> String {
         return weight
+    }
+    
+    func loadFinishedWorkouts() {
+        let uid = getCurrentUserID()
+        ref = Database.database().reference()
+        ref.child("finishedWorkouts").child(uid!).observe(.childAdded) { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let averageSpeedToAppend = value?["averageSpeed"] as? Double ?? 0
+            let averagePulseToAppend = value?["averageHeartRate"] as? Double ?? 0
+            let workoutPerformanceToAppend = value?["Workout Performance"] as? Double ?? 0
+            
+            
+            overallAverageSpeedList.append(averageSpeedToAppend)
+            overallAveragePulseList.append(averagePulseToAppend)
+            overallWorkoutPerformanceList.append(workoutPerformanceToAppend)
+            
+            
+            
+        }
     }
     
 }
