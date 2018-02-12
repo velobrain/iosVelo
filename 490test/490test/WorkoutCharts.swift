@@ -29,10 +29,14 @@ class WorkoutGoalsChart : UIViewController {
         }
         let distanceLine = LineChartDataSet(values: lineChartEntryDistance, label: "Distance")
         distanceLine.colors = [NSUIColor.blue]
+        distanceLine.circleRadius = 1
+    
         let data = LineChartData()
+    
         data.addDataSet(distanceLine)
         chartView.data = data
         chartView.chartDescription?.text = "Distance Chart"
+        
     }
     
     
@@ -54,6 +58,6 @@ class WorkoutGoalsChart : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDistanceChart()
-        showPulseChart()
+        //showPulseChart()
     }
 }

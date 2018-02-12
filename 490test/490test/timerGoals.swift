@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var debugMode = 0; // 1 = debug
+var debugMode = 1; // 1 = debug
 class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()
@@ -26,7 +26,12 @@ class timerGoals: UIViewController {
     var fakeDataTimer: Timer!
     func genFakeData() {
         self.fakeDataTimer = Timer(fire: Date(), interval: (5.0), repeats: true, block: { (fakeDataTimer) in
-            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0))
+            self.currentWorkout.newEntry(pitch: self.fakeData.genRandomPitch(), dist: self.fakeData.genRandomDistance(previousDistance: totalDistArray.last ?? 0)) // pitch and distance
+            self.currentWorkout.newEntryPulse(pulse: self.fakeData.genRandomPulse()) // pulse
+            
+            self.currentWorkout.onTrackForGoals(speedGoal: self.speedGoal, timeGoal: self.timeGoal)
+            self.currentWorkout.newEntryPulse(pulse: self.pulseGoal)
+            print(currentSpeedArray)
         })
         RunLoop.current.add(self.fakeDataTimer!, forMode: .defaultRunLoopMode)
     }
@@ -82,6 +87,8 @@ class timerGoals: UIViewController {
         if(debugMode == 1 ){
              fakeDataTimer.invalidate()
         }
+        disconnectFromBluetooth()
+        goToLoadingScreen()
         
         sensorTimer.invalidate()
         startCountdown = false
@@ -98,6 +105,9 @@ class timerGoals: UIViewController {
             print("not connected yet")
         } else {
             if startCountdown == true{
+                if(debugMode == 1) {
+                    genFakeData()
+                }
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerGoals.updateCountdown), userInfo: nil, repeats: true)
                 startCountdown = false
             }
@@ -144,9 +154,7 @@ class timerGoals: UIViewController {
       
         timeLbl.text = "\(timeP!):00"
         
-        if(debugMode == 1) {
-            genFakeData()
-        }
+       
         
     
         // Do any additional setup after loading the view.

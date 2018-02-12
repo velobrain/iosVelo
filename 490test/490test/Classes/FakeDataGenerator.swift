@@ -10,7 +10,7 @@ import Foundation
 class FakeDataGenerator {
     
     func genRandomDistance(previousDistance: Double) -> Double {
-        return Double(arc4random_uniform(10)) + Double(previousDistance)
+        return Double(arc4random_uniform(20)) + Double(previousDistance)
     }
     
     func genRandomPulse() -> Double {

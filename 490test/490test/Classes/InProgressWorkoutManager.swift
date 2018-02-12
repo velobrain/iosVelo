@@ -38,7 +38,7 @@ class InProgessWorkoutManager {
     
     func onTrackForGoals(speedGoal: Double, timeGoal: Int) -> Bool {
         // return true or false if they are on track to meet workout goals
-        var timeElapsed = totalDistArray.count * 5
+        var timeElapsed = Double(totalDistArray.count) * 5
         var currentSpeed = Double(totalDistArray.last!) / Double (timeElapsed)
         currentSpeedArray.append(currentSpeed)
        // print(timeElapsed)
@@ -57,6 +57,7 @@ func onTrackForGoalsPulse(pulseGoal: Double) -> Bool {
     averageHeartRate *= 60 // times 60 to make it in bpm
     currentAveragePulse = averageHeartRate
     if (averageHeartRate >= pulseGoal) {
+        onTrackForGoalsCounter += 1
         return true
     } else {
         return false

@@ -38,8 +38,8 @@ class MainMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         greetLabel.text = name
-        homeScreenDistanceLabel.text = ("\(String(homeScreenDistance)) KM")
-        homeScreenSpeedLabel.text = ("\(String(homeScreenSpeed)) km/h")
+        homeScreenDistanceLabel.text = ("\(String(homeScreenDistance)) m")
+        homeScreenSpeedLabel.text = ("\(String(homeScreenSpeed)) m/s")
         homeScreenPulseLabel.text = ("\(String(homeScreenPulse)) bpm")
         homeScreenPitchLabel.text = ("\(String(homeScreenPitch)) °")
         bordersForBoxes()
