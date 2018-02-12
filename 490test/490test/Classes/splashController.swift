@@ -26,11 +26,12 @@ class splashController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let firebaseData = FireBaseHelper();
+        
         gifView.loadGif(name: "ring")
         Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
+                let firebaseData = FireBaseHelper();
                 self.perform(#selector(self.skipToMenuAlreadyLoggedIn), with: nil, afterDelay: 2)
             } else {
                 self.perform(#selector(self.jumpToNextViewAfterLoad), with: nil, afterDelay: 2)

@@ -193,7 +193,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Weight in lbs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TeN-uO-nqx">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Weight in kg" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TeN-uO-nqx">
                                 <rect key="frame" x="72" y="466" width="231" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -569,13 +569,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oij-YK-cKc">
-                                <rect key="frame" x="32" y="283" width="313" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pA-KD-EHt">
                                 <rect key="frame" x="32" y="157" width="313" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -599,26 +592,25 @@
                                     <action selector="workoutListBtn:" destination="lav-VB-8fF" eventType="touchUpInside" id="xLC-8Z-aEC"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQB-O3-h7F" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="32" y="368" width="313" height="272"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLp-wt-NbY">
-                                <rect key="frame" x="61" y="696" width="254" height="30"/>
+                                <rect key="frame" x="60" y="748" width="254" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="logout:" destination="lav-VB-8fF" eventType="touchUpInside" id="jLA-zp-x2c"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9RI-AP-9l9" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="14" y="345" width="345" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="F2k-5R-rtf"/>
                     </view>
                     <connections>
-                        <outlet property="OverallWorkoutStatsChartView" destination="YQB-O3-h7F" id="iz7-k5-mb8"/>
-                        <outlet property="loggedIn" destination="Oij-YK-cKc" id="dKe-BZ-uM6"/>
+                        <outlet property="overallWorkoutStatsChartView" destination="9RI-AP-9l9" id="Wfd-nX-rX6"/>
                         <outlet property="userHeightLbl" destination="2pA-KD-EHt" id="r4i-2S-VlH"/>
                         <outlet property="userNameLbl" destination="053-8a-hMd" id="Zer-Sy-Wio"/>
                         <outlet property="userWeightLbl" destination="Aga-T5-CIh" id="J9i-1U-Uoe"/>

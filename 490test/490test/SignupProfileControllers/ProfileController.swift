@@ -13,7 +13,9 @@ import Charts
 var loadCount = 0
 class ProfileController: UIViewController {
 
-    @IBOutlet weak var OverallWorkoutStatsChartView: LineChartView!
+    
+    @IBOutlet weak var overallWorkoutStatsChartView: LineChartView!
+    
     @IBAction func workoutListBtn(_ sender: Any) {
         performSegue(withIdentifier: "goToWorkoutList", sender: self)
     }
@@ -33,14 +35,15 @@ class ProfileController: UIViewController {
         
         let line = LineChartDataSet(values: lineChartEntry, label: "Average Speed")
         line.colors = [NSUIColor.blue]
-        line.circleRadius = 1
+        line.circleRadius = 2
+        line.lineWidth = 2
     
         
         let data = LineChartData()
         data.addDataSet(line)
-        OverallWorkoutStatsChartView.data = data
-        OverallWorkoutStatsChartView.animate(xAxisDuration: 2, yAxisDuration: 3)
-        OverallWorkoutStatsChartView.chartDescription?.text = "Average Speeds History"
+        overallWorkoutStatsChartView.data = data
+        overallWorkoutStatsChartView.animate(xAxisDuration: 2.5, yAxisDuration: 3)
+        overallWorkoutStatsChartView.chartDescription?.text = "Average Speeds History"
     }
     
     override func viewDidLoad() {
