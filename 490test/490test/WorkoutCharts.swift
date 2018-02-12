@@ -24,16 +24,16 @@ class WorkoutGoalsChart : UIViewController {
         
         var lineChartEntryDistance = [ChartDataEntry]()
         for i in 0..<totalDistArray.count  {
-            let distanceValue = ChartDataEntry(x: Double(i * 5), y: currentSpeedArray[i])
-            lineChartEntryDistance.append(distanceValue)
+            let currentSpeedValue = ChartDataEntry(x: Double(i * 5), y: currentSpeedArray[i])
+            lineChartEntryDistance.append(currentSpeedValue)
         }
-        let distanceLine = LineChartDataSet(values: lineChartEntryDistance, label: "Speed")
-        distanceLine.colors = [NSUIColor.blue]
-        distanceLine.circleRadius = 1
+        let currentSpeedLine = LineChartDataSet(values: lineChartEntryDistance, label: "Speed")
+        currentSpeedLine.colors = [NSUIColor.blue]
+        currentSpeedLine.circleRadius = 1
     
         let data = LineChartData()
     
-        data.addDataSet(distanceLine)
+        data.addDataSet(currentSpeedLine)
         chartView.data = data
         chartView.chartDescription?.text = "Distance Chart"
     }
