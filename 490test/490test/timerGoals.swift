@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var debugMode = 1; // 1 = debug
+var debugMode = 0; // 1 = debug
 class timerGoals: UIViewController {
     //Mark-----------Phone Sensor--------------------
     let phoneSensor = PhoneSensorManager()

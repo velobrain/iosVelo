@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import Charts
 
-class WorkoutGoalsChart : UIViewController {
-    
-   
+class WorkoutChart : UIViewController {
     
     
+    @IBAction func goHomeButton(_ sender: Any) {
+        performSegue(withIdentifier: "chartToMainMenu", sender: self)
+    }
     
     @IBOutlet weak var chartView: LineChartView!
    

@@ -516,23 +516,31 @@
             </objects>
             <point key="canvasLocation" x="2591" y="71"/>
         </scene>
-        <!--Workout Goals Chart-->
+        <!--Workout Chart-->
         <scene sceneID="dTr-3Y-Ib3">
             <objects>
-                <viewController id="LBT-yf-Jhb" customClass="WorkoutGoalsChart" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LBT-yf-Jhb" customClass="WorkoutChart" customModule="_90test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zlU-vW-fnt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gi-I6-arB" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="76" width="343" height="332"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-Ij-UPA" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="447" width="343" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-ba-071">
+                                <rect key="frame" x="30" y="69" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="goHomeButton:" destination="LBT-yf-Jhb" eventType="touchUpInside" id="dfb-MZ-9au"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Gi-I6-arB" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="107" width="343" height="332"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -541,6 +549,7 @@
                     <connections>
                         <outlet property="chartView" destination="6Gi-I6-arB" id="U2E-eZ-Iyc"/>
                         <outlet property="pulseChartView" destination="Zqa-Ij-UPA" id="KMN-fR-IK1"/>
+                        <segue destination="q9M-dN-nPU" kind="show" identifier="chartToMainMenu" id="8e9-kN-EwB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xm-kN-LxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1102,6 +1111,6 @@
         <image name="icons8-stop-100 (1).png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mke-tF-Cml"/>
+        <segue reference="8e9-kN-EwB"/>
     </inferredMetricsTieBreakers>
 </document>
